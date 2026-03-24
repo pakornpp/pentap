@@ -1,0 +1,43 @@
+/* Layout */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  background: #1a1a2e;
+}
+
+nav a {
+  color: #eee;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+/* Language switcher */
+.lang-switcher {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-switcher button {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  background: transparent;
+  color: #eee;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.lang-switcher button.active,
+.lang-switcher button:hover {
+  background: #eee;
+  color: #1a1a2e;
+}
+
+/* Content */
+main {
+  padding: 3rem 2rem;
+}
