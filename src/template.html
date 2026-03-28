@@ -9,17 +9,111 @@
 
 <body>
     <nav>
-        <a href="#" data-i18n="nav.home"></a>
-        <a href="#" data-i18n="nav.about"></a>
-        <a href="#" data-i18n="nav.contact"></a>
+        <div class="logo-container">
+            <img src="../assets/pentap_flower.png" alt="Penta P Logo" class="logo">
+            <h1>Penta P</h1>
+        </div>
+        <div class="nav-menu" id="nav-menu">
+            <a href="#home" data-i18n="nav.home"></a>
+            <a href="#group-section" data-i18n="nav.accommodation"></a>
+            <a href="#warehouse-card" data-i18n="nav.warehouse"></a>
+            <a href="#contact-section" data-i18n="nav.contact"></a>
+        </div>
         <div class="lang-switcher">
             <button data-lang-btn="en" onclick="window.setLanguage('en')">EN</button>
-            <button data-lang-btn="th" onclick="window.setLanguage('th')">TH</button>
+            <button data-lang-btn="th" onclick="window.setLanguage('th')">ไทย</button>
         </div>
+        <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
-    <main>
-        <h1 data-i18n="hero.title"></h1>
-        <p data-i18n="hero.subtitle"></p>
+    <main id="home">
+        <section class="hero-section">
+            <div class="hero-copy">
+                <span class="eyebrow" data-i18n="hero.eyebrow"></span>
+                <h1 data-i18n="hero.title"></h1>
+                <p data-i18n="hero.subtitle"></p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#group-section" data-i18n="hero.ctaPrimary"></a>
+                    <a class="btn btn-secondary" href="#contact-section" data-i18n="hero.ctaSecondary"></a>
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-label="Penta P portfolio overview">
+                <article class="hero-card hero-card-stat">
+                    <p class="card-label" data-i18n="hero.statLabel"></p>
+                    <strong data-i18n="hero.statValue"></strong>
+                    <span data-i18n="hero.statText"></span>
+                </article>
+            </div>
+        </section>
+
+        <section class="group-section" id="group-section">
+            <div class="section-heading">
+                <span class="eyebrow" data-i18n="group.eyebrow"></span>
+                <h2 data-i18n="group.title"></h2>
+                <p data-i18n="group.subtitle"></p>
+            </div>
+
+            <div class="group-grid group-grid-primary">
+                <article class="group-card">
+                    <img src="../assets/pph.jpg" alt="Penta P Hospitality">
+                    <div class="group-card-content">
+                        <span class="card-label" data-i18n="group.card2.label"></span>
+                        <h3 data-i18n="group.card2.title"></h3>
+                        <p data-i18n="group.card2.description"></p>
+                    </div>
+                </article>
+
+                <article class="group-card">
+                    <img src="../assets/ppr_clean.png" alt="Penta P Residence">
+                    <div class="group-card-content">
+                        <span class="card-label" data-i18n="group.card3.label"></span>
+                        <h3 data-i18n="group.card3.title"></h3>
+                        <p data-i18n="group.card3.description"></p>
+                    </div>
+                </article>
+
+                <article class="group-card group-card-full" id="accommodation-card">
+                    <img src="../assets/ppa.jpg" alt="Penta P Accommodation">
+                    <div class="group-card-content">
+                        <span class="card-label" data-i18n="group.card1.label"></span>
+                        <h3 data-i18n="group.card1.title"></h3>
+                        <p data-i18n="group.card1.description"></p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="group-grid group-grid-secondary">
+                <article class="group-card group-card-accent" id="warehouse-card">
+                    <img src="../assets/ppw.jpg" alt="Penta P Warehouse">
+                    <div class="group-card-content">
+                        <span class="card-label" data-i18n="group.card4.label"></span>
+                        <h3 data-i18n="group.card4.title"></h3>
+                        <p data-i18n="group.card4.description"></p>
+                    </div>
+                </article>
+
+                <article class="group-card group-card-accent" id="warehouse-card-2">
+                    <img src="../assets/ppw2.png" alt="Penta P Warehouse 2">
+                    <div class="group-card-content">
+                        <span class="card-label" data-i18n="group.card5.label"></span>
+                        <h3 data-i18n="group.card5.title"></h3>
+                        <p data-i18n="group.card5.description"></p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact-section">
+            <div>
+                <span class="eyebrow" data-i18n="contact.eyebrow"></span>
+                <h2 data-i18n="contact.title"></h2>
+            </div>
+            <a class="btn btn-primary" href="mailto:contact@pentap.group" data-i18n="contact.cta"></a>
+        </section>
     </main>
 </body>
 
