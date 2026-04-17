@@ -121,7 +121,7 @@ nav a {
   margin-left: 0;
   border: 1px solid rgba(1, 66, 53, 0.16);
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 1);
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -262,6 +262,22 @@ main {
   box-shadow: 0 16px 30px rgba(1, 66, 53, 0.18);
 }
 
+.btn-primary:hover {
+  background: var(--green-700);
+  box-shadow: 0 20px 36px rgba(1, 66, 53, 0.26);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--green);
+  border: 1.5px solid rgba(1, 66, 53, 0.4);
+}
+
+.btn-outline:hover {
+  background: rgba(1, 66, 53, 0.06);
+  border-color: var(--green);
+}
+
 .btn-secondary {
   background: rgba(255, 255, 255, 0.86);
   color: var(--green);
@@ -279,6 +295,12 @@ main {
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.88);
   box-shadow: var(--shadow-md);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.group-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
 }
 
 .hero-card {
@@ -328,6 +350,7 @@ main {
 .section-heading {
   max-width: 740px;
   margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .section-heading h2,
