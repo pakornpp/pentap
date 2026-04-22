@@ -189,7 +189,7 @@ main {
   grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
   gap: 2rem;
   align-items: center;
-  padding: 2rem 0 4rem;
+  padding: 2rem 0 2rem;
 }
 
 .eyebrow,
@@ -350,7 +350,7 @@ main {
 .section-heading {
   max-width: 740px;
   margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .section-heading h2,
@@ -533,5 +533,151 @@ main {
 
   .btn {
     width: 100%;
+  }
+}
+
+/* ── Accommodation Listing Page ─────────────────────────────── */
+.listing-section {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 2rem 0 5rem;
+}
+
+.listing-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.listing-header h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  color: var(--green);
+}
+
+.listing-header p {
+  margin: 0;
+  color: rgba(1, 66, 53, 0.72);
+  font-size: 1rem;
+}
+
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+}
+
+.listing-card {
+  border-radius: 20px;
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.listing-card-img-wrap {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.listing-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.listing-card:hover .listing-card-img-wrap img {
+  transform: scale(1.04);
+}
+
+.listing-card-body {
+  padding: 1.1rem 1.25rem 1.3rem;
+}
+
+.listing-card-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.listing-card-name {
+  margin: 0 0 0.25rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.listing-card-address {
+  margin: 0;
+  font-size: 0.82rem;
+  color: rgba(1, 66, 53, 0.62);
+}
+
+.listing-price-badge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(18, 169, 159, 0.14);
+  color: var(--turquoise);
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.listing-amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(1, 66, 53, 0.08);
+}
+
+.amenity {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: rgba(1, 66, 53, 0.75);
+  font-weight: 500;
+}
+
+.amenity svg {
+  flex-shrink: 0;
+  color: var(--turquoise);
+}
+
+/* Clickable group cards on homepage */
+.group-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.group-card-link .group-card {
+  height: 100%;
+}
+
+@media (max-width: 960px) {
+  .listing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .listing-grid {
+    grid-template-columns: 1fr;
   }
 }
