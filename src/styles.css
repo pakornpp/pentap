@@ -657,6 +657,8 @@ main {
 .amenity svg {
   flex-shrink: 0;
   color: var(--turquoise);
+  width: 18px;
+  height: 18px;
 }
 
 /* Clickable group cards on homepage */
