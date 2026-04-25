@@ -37,5 +37,54 @@
   "group.ppw2.description": "Additional warehouse space designed to increase storage capability and support higher-volume operations with consistent reliability.",
   "contact.eyebrow": "Start a conversation",
   "contact.title": "Need a tailored solution for accommodation or storage?",
-  "contact.cta": "Get in touch"
+  "contact.cta": "Get in touch",
+  "amenity.bedroom": "Bedroom",
+  "amenity.bedrooms": "Bedrooms",
+  "amenity.bathroom": "Bathroom",
+  "amenity.bathrooms": "Bathrooms",
+  "amenity.level": "Level",
+  "amenity.levels": "Levels",
+
+  "room.ppr.location": "Penta P Residence, Ubonratchathani",
+  "room.startingFrom": "Starting from",
+  "room.perMonth": "/ month",
+  "room.about": "About this unit",
+  "room.gallery": "Gallery",
+  "room.floorplan": "Floor Plan",
+  "room.cta": "Get in touch",
+
+  "room.standard1.title": "Standard 1",
+  "room.standard1.desc.1": "Welcome to the Standard 1 — a thoughtfully designed single-bedroom apartment that blends comfort with contemporary style. Bright natural light fills the open-plan living and dining area, creating a warm and inviting atmosphere from the moment you step inside.",
+  "room.standard1.desc.2": "The fully equipped kitchen offers everything you need for everyday living, while the comfortable bedroom provides a peaceful retreat after a long day. A modern bathroom with quality fittings completes this well-rounded unit.",
+  "room.standard1.desc.3": "Ideally situated within Penta P Residence, residents enjoy access to shared amenities and convenient transport links. Whether you're a young professional or a couple starting out, the Standard 1 delivers exceptional value in a prime location.",
+
+  "room.superior1.title": "Superior 1",
+  "room.superior1.desc.1": "Welcome to the Superior 1 — a refined single-bedroom apartment offering an elevated standard of living. The spacious open-plan layout is bathed in natural light, creating a bright and welcoming atmosphere throughout.",
+  "room.superior1.desc.2": "The well-appointed kitchen and comfortable bedroom are complemented by a modern bathroom with premium fittings, making this unit ideal for discerning residents who appreciate quality in every detail.",
+  "room.superior1.desc.3": "Located within Penta P Residence, the Superior 1 provides easy access to shared facilities and excellent transport connections — the perfect choice for those seeking comfort and convenience in one package.",
+
+  "room.superior2.title": "Superior 2",
+  "room.superior2.desc.1": "Welcome to the Superior 2 — a generously proportioned two-bedroom apartment designed for those who value space, style, and premium comfort. The open-plan living areas are flooded with natural light, setting a sophisticated tone from the moment you arrive.",
+  "room.superior2.desc.2": "Two well-furnished bedrooms and two modern bathrooms ensure privacy and convenience for couples, families, or professionals who work from home. The fully equipped kitchen supports everyday living with ease.",
+  "room.superior2.desc.3": "Spread across two levels within Penta P Residence, the Superior 2 combines elevated design with practical functionality. Enjoy access to shared amenities and seamless connectivity to the wider city.",
+
+  "room.deluxe1a.title": "Deluxe 1A",
+  "room.deluxe1a.desc.1": "Welcome to the Deluxe 1A — a beautifully appointed single-bedroom apartment where contemporary design meets exceptional comfort. Natural light pours through generous windows, illuminating the elegant open-plan living and dining space.",
+  "room.deluxe1a.desc.2": "The sleek, fully equipped kitchen is ideal for home cooking, while the thoughtfully furnished bedroom offers a tranquil environment for rest and relaxation. A stylish bathroom with high-quality fixtures rounds out this impressive unit.",
+  "room.deluxe1a.desc.3": "Nestled within Penta P Residence, the Deluxe 1A places you close to all the amenities and services you need. A perfect residence for professionals and couples who demand the very best.",
+
+  "room.deluxe1b.title": "Deluxe 1B",
+  "room.deluxe1b.desc.1": "Welcome to the Deluxe 1B — a stylish and comfortable single-bedroom apartment crafted for modern living. The thoughtfully planned layout maximises space and light, creating an open, airy environment throughout.",
+  "room.deluxe1b.desc.2": "Every detail has been considered, from the fully fitted kitchen to the serene bedroom and the elegant bathroom with premium accessories. This unit is designed to support a refined and effortless lifestyle.",
+  "room.deluxe1b.desc.3": "Forming part of the prestigious Penta P Residence, the Deluxe 1B offers easy access to shared facilities and excellent connectivity. An outstanding option for those who desire quality living in a prime location.",
+
+  "room.deluxe2.title": "Deluxe 2",
+  "room.deluxe2.desc.1": "Welcome to the Deluxe 2 — a commanding two-bedroom apartment that sets a new benchmark for upscale urban living. Expansive living areas, premium finishes, and abundant natural light create an atmosphere of refined luxury.",
+  "room.deluxe2.desc.2": "Two spacious bedrooms and two well-appointed bathrooms provide ample space for families or professionals seeking room to breathe. The generous kitchen and dining area are perfect for entertaining or peaceful evenings at home.",
+  "room.deluxe2.desc.3": "Situated within Penta P Residence, the Deluxe 2 is a statement of prestige and comfort. Enjoy outstanding shared amenities and a location that keeps the best of the city within easy reach.",
+
+  "room.grand2.title": "Grand 2",
+  "room.grand2.desc.1": "Welcome to the Grand 2 — our most impressive offering, a sweeping two-bedroom, two-level apartment that redefines luxury living. Grand proportions, designer finishes, and panoramic natural light come together to create a truly exceptional home.",
+  "room.grand2.desc.2": "The ground level features expansive living and dining spaces alongside a premium kitchen, while the upper level is dedicated to two lavishly appointed bedrooms and two elegant bathrooms crafted to the highest standards.",
+  "room.grand2.desc.3": "The Grand 2 at Penta P Residence is the pinnacle of sophisticated urban living. With world-class amenities on your doorstep and outstanding transport access, this residence offers an uncompromising lifestyle for the most discerning residents."
 }

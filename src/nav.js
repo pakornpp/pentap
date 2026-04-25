@@ -8,14 +8,17 @@ export function initNav(base = "") {
 	const nav = document.querySelector("nav");
 	if (!nav) return;
 
+	// Derive directory prefix so sibling pages resolve correctly from any depth
+	const prefix = base.replace(/[^/]*$/, "");
+
 	nav.innerHTML = `
-		<div class="logo-container">
+		<a href="${base}" class="logo-container">
 			<img src="${logoUrl}" alt="Penta P Logo" class="logo">
-			<h1 class="logo-name">Penta P</h1>
-		</div>
+			<h1 class="logo-name">Penta P Group</h1>
+		</a>
 		<div class="nav-menu" id="nav-menu">
 			<a href="${base}" data-i18n="nav.home"></a>
-			<a href="accommodation.html" data-i18n="nav.accommodation"></a>
+			<a href="${prefix}accommodation.html" data-i18n="nav.accommodation"></a>
 			<a href="${base}#warehouse-card" data-i18n="nav.warehouse"></a>
 			<a href="${base}#contact-section" data-i18n="nav.contact"></a>
 		</div>
