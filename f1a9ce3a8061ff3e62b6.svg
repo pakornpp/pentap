@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="icon-bed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2H2V9Z"/>
+        <path d="M2 11v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-7"/>
+        <path d="M6 11V7"/>
+        <path d="M2 15h20"/>
+    </symbol>
+    <symbol id="icon-bath" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 6a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v2H8V6Z"/>
+        <rect x="2" y="8" width="20" height="4" rx="1"/>
+        <path d="M4 12v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/>
+        <line x1="10" y1="19" x2="10" y2="21"/>
+        <line x1="14" y1="19" x2="14" y2="21"/>
+    </symbol>
+    <symbol id="icon-levels" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="3,21 3,15 9,15 9,9 15,9 15,3 21,3"/>
+        <polyline points="21,3 21,9"/>
+        <polyline points="15,9 21,9"/>
+    </symbol>
+    <symbol id="icon-living-room" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 13V9a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4"/>
+        <path d="M2 13a2 2 0 0 1 2-2v6H4a2 2 0 0 1-2-2v-2Z"/>
+        <path d="M22 13a2 2 0 0 0-2-2v6h0a2 2 0 0 0 2-2v-2Z"/>
+        <path d="M4 17h16"/>
+        <path d="M4 17v2"/>
+        <path d="M20 17v2"/>
+    </symbol>
+</svg>
