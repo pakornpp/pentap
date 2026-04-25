@@ -20,7 +20,7 @@ export function initNav(base = "") {
 			<a href="${base}" data-i18n="nav.home"></a>
 			<a href="${prefix}accommodation.html" data-i18n="nav.accommodation"></a>
 			<a href="${base}#warehouse-card" data-i18n="nav.warehouse"></a>
-			<a href="${base}#contact-section" data-i18n="nav.contact"></a>
+			<a href="${prefix}contact.html" data-i18n="nav.contact"></a>
 		</div>
 		<div class="lang-switcher">
 			<button data-lang-btn="en" onclick="window.setLanguage('en')">EN</button>

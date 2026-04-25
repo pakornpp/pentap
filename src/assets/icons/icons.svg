@@ -17,4 +17,12 @@
         <polyline points="21,3 21,9"/>
         <polyline points="15,9 21,9"/>
     </symbol>
+    <symbol id="icon-living-room" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 13V9a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4"/>
+        <path d="M2 13a2 2 0 0 1 2-2v6H4a2 2 0 0 1-2-2v-2Z"/>
+        <path d="M22 13a2 2 0 0 0-2-2v6h0a2 2 0 0 0 2-2v-2Z"/>
+        <path d="M4 17h16"/>
+        <path d="M4 17v2"/>
+        <path d="M20 17v2"/>
+    </symbol>
 </svg>

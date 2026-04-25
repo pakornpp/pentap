@@ -2,6 +2,7 @@ import "../styles.css";
 import { setLanguage } from "../i18n.js";
 import { initNav } from "../nav.js";
 import { renderRoomPage } from "./roomPage.js";
+import { PRICES } from "../prices.js";
 
 import heroImg  from "../assets/ppr/superior_2/superior2-1.webp";
 import img2     from "../assets/ppr/superior_2/superior2-2.webp";
@@ -28,7 +29,7 @@ renderRoomPage({
 		{ icon: "icon-bath",   count: 2 },
 		{ icon: "icon-levels", count: 2 },
 	],
-	price:      "฿13,000",
+	price:      PRICES.ppr.superior2.price,
 	heroImage:  { src: heroImg, alt: "Superior 2 - living area" },
 	descriptionKeys: [
 		"room.ppr.desc.1",

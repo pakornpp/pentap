@@ -8,9 +8,10 @@ import iconsUrl from "../assets/icons/icons.svg";
  */
 function amenityLabelKey(icon, count) {
 	const map = {
-		"icon-bed":    count === 1 ? "amenity.bedroom"  : "amenity.bedrooms",
-		"icon-bath":   count === 1 ? "amenity.bathroom" : "amenity.bathrooms",
-		"icon-levels": count === 1 ? "amenity.level"    : "amenity.levels",
+		"icon-bed":         count === 1 ? "amenity.bedroom"  : "amenity.bedrooms",
+		"icon-bath":        count === 1 ? "amenity.bathroom" : "amenity.bathrooms",
+		"icon-levels":      count === 1 ? "amenity.level"    : "amenity.levels",
+		"icon-living-room": "amenity.livingRoom",
 	};
 	return map[icon] ?? icon;
 }
@@ -41,7 +42,7 @@ export function renderRoomPage(config) {
 			return `
 				<span class="amenity">
 					<svg aria-hidden="true"><use href="${iconsUrl}#${icon}"></use></svg>
-					${count} <span data-i18n="${labelKey}"></span>
+					${count > 0 ? `${count} ` : ''}<span data-i18n="${labelKey}"></span>
 				</span>`;
 		})
 		.join('<span class="room-amenity-divider"></span>');
@@ -79,13 +80,14 @@ export function renderRoomPage(config) {
 					<div>
 						<p class="room-info-label" data-i18n="room.startingFrom"></p>
 						<p class="room-price">${config.price} <span data-i18n="room.perMonth"></span></p>
+						${config.priceNote ? `<p class="room-price-note">${config.priceNote}</p>` : ''}
 					</div>
 				</div>
 				<div class="room-description">
 					<h2 data-i18n="room.about"></h2>
 					${paragraphsHtml}
 				</div>
-				<a href="#" class="btn btn-primary room-cta" data-i18n="room.cta"></a>
+				<a href="contact.html" class="btn btn-primary room-cta" data-i18n="room.cta"></a>
 			</section>
 
 			<!-- Photo gallery -->
@@ -96,13 +98,14 @@ export function renderRoomPage(config) {
 				</div>
 			</section>
 
-			<!-- Floor plan -->
+			${config.floorPlan ? `
+		<!-- Floor plan -->
 			<section class="room-floorplan">
 				<h2 class="room-gallery-heading" data-i18n="room.floorplan"></h2>
 				${(Array.isArray(config.floorPlan) ? config.floorPlan : [config.floorPlan])
 					.map(({ src, alt }) => `<div class="room-floorplan-img-wrap"><img src="${src}" alt="${alt}"></div>`)
 					.join("\n")}
-			</section>
+			</section>` : ''}
 
 		</div>
 	`;
