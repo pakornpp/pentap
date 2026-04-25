@@ -793,15 +793,34 @@ main {
   color: var(--green);
 }
 
-.room-description p {
+.room-description p,
+.room-description .room-desc-block {
   margin: 0 0 0.9rem;
   color: rgba(1, 66, 53, 0.78);
   line-height: 1.75;
   max-width: 72ch;
 }
 
-.room-description p:last-child {
+.room-description p:last-child,
+.room-description .room-desc-block:last-child {
   margin-bottom: 0;
+}
+
+.room-desc-subheading {
+  margin: 1rem 0 0.4rem;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.room-desc-list {
+  margin: 0 0 0.5rem 1.2rem;
+  padding: 0;
+  color: rgba(1, 66, 53, 0.78);
+  line-height: 1.75;
+}
+
+.room-desc-list li {
+  margin-bottom: 0.2rem;
 }
 
 .room-cta {

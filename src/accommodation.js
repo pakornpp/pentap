@@ -2,13 +2,15 @@ import "./styles.css";
 import { setLanguage } from "./i18n.js";
 import { initNav } from "./nav.js";
 import iconsUrl from "./assets/icons/icons.svg";
-import imgStandard1 from "./assets/ppr/standard_1/standard1-1.jpg";
-import imgSuperior1 from "./assets/ppr/superior_1/superior1-1.jpg";
-import imgDeluxe1a from "./assets/ppr/deluxe_1a/deluxe1a-1.jpg";
-import imgDeluxe1b from "./assets/ppr/deluxe_1b/deluxe1b-1.jpg";
-import imgSuperior2 from "./assets/ppr/superior_2/superior2-1.jpg";
-import imgDeluxe2 from "./assets/ppr/deluxe_2/deluxe2-1.jpg";
-import imgGrand2 from "./assets/ppr/grand_2/grand2-1.jpg";
+import imgStandard1 from "./assets/ppr/standard_1/standard1-1.webp";
+import imgSuperior1 from "./assets/ppr/superior_1/superior1-1.webp";
+import imgDeluxe1a from "./assets/ppr/deluxe_1a/deluxe1a-1.webp";
+import imgDeluxe1b from "./assets/ppr/deluxe_1b/deluxe1b-1.webp";
+import imgSuperior2 from "./assets/ppr/superior_2/superior2-1.webp";
+import imgDeluxe2 from "./assets/ppr/deluxe_2/deluxe2-1.webp";
+import imgGrand2 from "./assets/ppr/grand_2/grand2-1.webp";
+// TODO: import imgPphStandard from "./assets/pph/standard/standard-1.webp";
+// TODO: import imgPphVip     from "./assets/pph/vip/vip-1.webp";
 
 window.setLanguage = setLanguage;
 
@@ -53,7 +55,7 @@ function createCard({ src, alt, name, price, bedrooms, bathrooms, levels, href }
 	return article;
 }
 
-const cards = [
+const pprCards = [
 	{ src: imgStandard1, alt: "Standard 1",  name: "Standard 1", price: "฿9,000",  bedrooms: 1, bathrooms: 1, levels: 1, href: "standard1.html" },
 	{ src: imgSuperior1, alt: "Superior 1",  name: "Superior 1", price: "฿10,000", bedrooms: 1, bathrooms: 1, levels: 1, href: "superior1.html" },
 	{ src: imgDeluxe1a,  alt: "Deluxe 1A",   name: "Deluxe 1A",  price: "฿11,000", bedrooms: 1, bathrooms: 1, levels: 1, href: "deluxe1a.html" },
@@ -63,5 +65,13 @@ const cards = [
 	{ src: imgGrand2,    alt: "Grand 2",     name: "Grand 2",    price: "฿15,000", bedrooms: 2, bathrooms: 2, levels: 2, href: "grand2.html" },
 ];
 
-const grid = document.querySelector(".listing-grid");
-cards.forEach((card) => grid.appendChild(createCard(card)));
+const pphCards = [
+	{ src: "", alt: "PPH Standard", name: "Standard", price: "TBD", bedrooms: 1, bathrooms: 1, levels: 1, href: "" },
+	{ src: "", alt: "PPH VIP",      name: "VIP",      price: "TBD", bedrooms: 1, bathrooms: 1, levels: 1, href: "" },
+];
+
+const pprGrid = document.querySelector("#ppr-grid");
+pprCards.forEach((card) => pprGrid.appendChild(createCard(card)));
+
+const pphGrid = document.querySelector("#pph-grid");
+pphCards.forEach((card) => pphGrid.appendChild(createCard(card)));

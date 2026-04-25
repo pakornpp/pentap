@@ -3,21 +3,21 @@ import { setLanguage } from "../i18n.js";
 import { initNav } from "../nav.js";
 import { renderRoomPage } from "./roomPage.js";
 
-import heroImg  from "../assets/ppr/deluxe_1a/deluxe1a-1.jpg";
-import img2     from "../assets/ppr/deluxe_1a/deluxe1a-2.jpg";
-import img3     from "../assets/ppr/deluxe_1a/deluxe1a-3.jpg";
-import img4     from "../assets/ppr/deluxe_1a/deluxe1a-4.jpg";
-import img5     from "../assets/ppr/deluxe_1a/deluxe1a-5.jpg";
-import img6     from "../assets/ppr/deluxe_1a/deluxe1a-6.jpg";
-import img7     from "../assets/ppr/deluxe_1a/deluxe1a-7.jpg";
-import img8     from "../assets/ppr/deluxe_1a/deluxe1a-8.jpg";
-import img9     from "../assets/ppr/deluxe_1a/deluxe1a-9.jpg";
-import img10    from "../assets/ppr/deluxe_1a/deluxe1a-10.jpg";
-import img11    from "../assets/ppr/deluxe_1a/deluxe1a-11.jpg";
-import img12    from "../assets/ppr/deluxe_1a/deluxe1a-12.jpg";
-import img13    from "../assets/ppr/deluxe_1a/deluxe1a-13.jpg";
-import img14    from "../assets/ppr/deluxe_1a/deluxe1a-14.jpg";
-import imgPlan  from "../assets/ppr/deluxe_1a/deluxe1a-plan.jpg";
+import heroImg  from "../assets/ppr/deluxe_1a/deluxe1a-1.webp";
+import img2     from "../assets/ppr/deluxe_1a/deluxe1a-2.webp";
+import img3     from "../assets/ppr/deluxe_1a/deluxe1a-3.webp";
+import img4     from "../assets/ppr/deluxe_1a/deluxe1a-4.webp";
+import img5     from "../assets/ppr/deluxe_1a/deluxe1a-5.webp";
+import img6     from "../assets/ppr/deluxe_1a/deluxe1a-6.webp";
+import img7     from "../assets/ppr/deluxe_1a/deluxe1a-7.webp";
+import img8     from "../assets/ppr/deluxe_1a/deluxe1a-8.webp";
+import img9     from "../assets/ppr/deluxe_1a/deluxe1a-9.webp";
+import img10    from "../assets/ppr/deluxe_1a/deluxe1a-10.webp";
+import img11    from "../assets/ppr/deluxe_1a/deluxe1a-11.webp";
+import img12    from "../assets/ppr/deluxe_1a/deluxe1a-12.webp";
+import img13    from "../assets/ppr/deluxe_1a/deluxe1a-13.webp";
+import img14    from "../assets/ppr/deluxe_1a/deluxe1a-14.webp";
+import imgPlan  from "../assets/ppr/deluxe_1a/deluxe1a-plan.webp";
 
 window.setLanguage = setLanguage;
 
@@ -34,9 +34,8 @@ renderRoomPage({
 	price:      "฿11,000",
 	heroImage:  { src: heroImg, alt: "Deluxe 1A - living area" },
 	descriptionKeys: [
-		"room.deluxe1a.desc.1",
-		"room.deluxe1a.desc.2",
-		"room.deluxe1a.desc.3",
+		"room.ppr.desc.1",
+		"room.ppr.desc.2",
 	],
 	gallery: [
 		{ src: img2,  alt: "Deluxe 1A - view 2", wide: true },

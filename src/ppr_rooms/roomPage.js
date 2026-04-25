@@ -47,7 +47,7 @@ export function renderRoomPage(config) {
 		.join('<span class="room-amenity-divider"></span>');
 
 	const paragraphsHtml = config.descriptionKeys
-		.map((key) => `<p data-i18n="${key}"></p>`)
+		.map((key) => `<div class="room-desc-block" data-i18n="${key}"></div>`)
 		.join("\n");
 
 	const galleryHtml = config.gallery

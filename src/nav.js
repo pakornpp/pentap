@@ -1,4 +1,4 @@
-import logoUrl from "./assets/pentap_flower.png";
+import logoUrl from "./assets/pentap_flower.webp";
 
 /**
  * Shared navigation module.

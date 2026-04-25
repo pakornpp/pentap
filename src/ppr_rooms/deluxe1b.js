@@ -3,19 +3,19 @@ import { setLanguage } from "../i18n.js";
 import { initNav } from "../nav.js";
 import { renderRoomPage } from "./roomPage.js";
 
-import heroImg  from "../assets/ppr/deluxe_1b/deluxe1b-1.jpg";
-import img2     from "../assets/ppr/deluxe_1b/deluxe1b-2.jpg";
-import img3     from "../assets/ppr/deluxe_1b/deluxe1b-3.jpg";
-import img4     from "../assets/ppr/deluxe_1b/deluxe1b-4.jpg";
-import img5     from "../assets/ppr/deluxe_1b/deluxe1b-5.jpg";
-import img6     from "../assets/ppr/deluxe_1b/deluxe1b-6.jpg";
-import img7     from "../assets/ppr/deluxe_1b/deluxe1b-7.jpg";
-import img8     from "../assets/ppr/deluxe_1b/deluxe1b-8.jpg";
-import img9     from "../assets/ppr/deluxe_1b/deluxe1b-9.jpg";
-import img10    from "../assets/ppr/deluxe_1b/deluxe1b-10.jpg";
-import img11    from "../assets/ppr/deluxe_1b/deluxe1b-11.jpg";
-import imgPlan1 from "../assets/ppr/deluxe_1b/deluxe1b-plan1.jpg";
-import imgPlan2 from "../assets/ppr/deluxe_1b/deluxe1b-plan2.jpg";
+import heroImg  from "../assets/ppr/deluxe_1b/deluxe1b-1.webp";
+import img2     from "../assets/ppr/deluxe_1b/deluxe1b-2.webp";
+import img3     from "../assets/ppr/deluxe_1b/deluxe1b-3.webp";
+import img4     from "../assets/ppr/deluxe_1b/deluxe1b-4.webp";
+import img5     from "../assets/ppr/deluxe_1b/deluxe1b-5.webp";
+import img6     from "../assets/ppr/deluxe_1b/deluxe1b-6.webp";
+import img7     from "../assets/ppr/deluxe_1b/deluxe1b-7.webp";
+import img8     from "../assets/ppr/deluxe_1b/deluxe1b-8.webp";
+import img9     from "../assets/ppr/deluxe_1b/deluxe1b-9.webp";
+import img10    from "../assets/ppr/deluxe_1b/deluxe1b-10.webp";
+import img11    from "../assets/ppr/deluxe_1b/deluxe1b-11.webp";
+import imgPlan1 from "../assets/ppr/deluxe_1b/deluxe1b-plan1.webp";
+import imgPlan2 from "../assets/ppr/deluxe_1b/deluxe1b-plan2.webp";
 
 window.setLanguage = setLanguage;
 
@@ -32,9 +32,8 @@ renderRoomPage({
 	price:      "฿13,000",
 	heroImage:  { src: heroImg, alt: "Deluxe 1B - living area" },
 	descriptionKeys: [
-		"room.deluxe1b.desc.1",
-		"room.deluxe1b.desc.2",
-		"room.deluxe1b.desc.3",
+		"room.ppr.desc.1",
+		"room.ppr.desc.2",
 	],
 	gallery: [
 		{ src: img2,  alt: "Deluxe 1B - view 2", wide: true },
