@@ -7,7 +7,7 @@ const SUPPORTED_LANGS = Object.keys(translations);
 let current = {};
 
 export async function setLanguage(lang) {
-  if (!SUPPORTED_LANGS.includes(lang)) lang = 'en';
+  if (!SUPPORTED_LANGS.includes(lang)) lang = 'th';
 
   const module = await translations[lang]();
   current = module.default ?? module;
@@ -35,13 +35,13 @@ function updateLangButtons(activeLang) {
   });
 }
 
-// Detect initial language: saved preference → browser language → 'en'
+// Detect initial language: saved preference → browser language → 'th'
 const saved = localStorage.getItem('lang');
 const browser = navigator.language?.slice(0, 2);
 const initial = SUPPORTED_LANGS.includes(saved)
   ? saved
   : SUPPORTED_LANGS.includes(browser)
     ? browser
-    : 'en';
+    : 'th';
 
 setLanguage(initial);
