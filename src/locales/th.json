@@ -101,5 +101,17 @@
   "room.ppa.desc.1": "<ul class=\"room-desc-list\"><li>ห้องตกแต่งครบครัน พร้อมเฟอร์นิเจอร์แบบติดผนังและแบบวางอิสระ</li><li>เตียงนอนพร้อมที่นอน</li><li>โต๊ะ</li><li>เก้าอี้</li><li>ทีวี</li><li>ตู้เย็น</li><li>ตู้เสื้อผ้า</li><li>ระเบียง</li></ul>",
   "room.pph.desc.1": "<ul class=\"room-desc-list\"><li>ห้องพร้อมเครื่องปรับอากาศ</li><li>เตียงนอนพร้อมที่นอน</li><li>ตู้เสื้อผ้า</li><li>ฝักบัวน้ำอุ่น</li><li>WiFi ฟรี</li><li>สมาร์ททีวี</li></ul>",
   "room.ppr.desc.1": "<ul class=\"room-desc-list\"><li>ห้องตกแต่งครบครัน พร้อมเฟอร์นิเจอร์แบบติดผนังและแบบวางอิสระ</li><li>เตียงนอนพร้อมที่นอน</li><li>โต๊ะรับประทานอาหาร</li><li>โซฟา</li><li>ตู้เสื้อผ้า</li><li>ชั้นวางรองเท้า</li><li>ชั้นวางของ</li><li>โต๊ะเครื่องแป้ง</li></ul><p class=\"room-desc-subheading\">ครัว</p><ul class=\"room-desc-list\"><li>เตาแม่เหล็กไฟฟ้า</li><li>เครื่องดูดควัน</li><li>ไมโครเวฟ</li><li>ตู้เย็น</li><li>กระทะ หม้อ จาน ชาม และอุปกรณ์ทานอาหาร</li></ul><ul class=\"room-desc-list\"><li>ระเบียง</li><li>สมาร์ททีวี</li><li>เครื่องปรับอากาศ</li><li>เครื่องซักผ้า (ในห้อง)</li><li>ฝักบัวน้ำอุ่น</li><li>WiFi ฟรี (ใยแก้วนำแสง)</li></ul>",
-  "room.ppr.desc.2": "<p class=\"room-desc-subheading\">ความปลอดภัยและความเป็นส่วนตัว</p><ul class=\"room-desc-list\"><li>ใช้คีย์การ์ดเข้าอาคาร</li><li>ทุกยูนิตติดตั้งกุญแจดิจิทัล</li><li>รีโมทคอนโทรลประตูหน้า</li><li>ประตูหน้าปิดตลอดเวลา</li><li>เจ้าหน้าที่รักษาความปลอดภัย</li><li>กล้องวงจรปิดรอบบริเวณ</li></ul>"
+  "room.ppr.desc.2": "<p class=\"room-desc-subheading\">ความปลอดภัยและความเป็นส่วนตัว</p><ul class=\"room-desc-list\"><li>ใช้คีย์การ์ดเข้าอาคาร</li><li>ทุกยูนิตติดตั้งกุญแจดิจิทัล</li><li>รีโมทคอนโทรลประตูหน้า</li><li>ประตูหน้าปิดตลอดเวลา</li><li>เจ้าหน้าที่รักษาความปลอดภัย</li><li>กล้องวงจรปิดรอบบริเวณ</li></ul>",
+
+  "page.ppr.standard1.title": "Standard 1 | เพนต้าพี เรสซิเดนซ์",
+  "page.ppr.superior1.title": "Superior 1 | เพนต้าพี เรสซิเดนซ์",
+  "page.ppr.superior2.title": "Superior 2 | เพนต้าพี เรสซิเดนซ์",
+  "page.ppr.deluxe1a.title": "Deluxe 1A | เพนต้าพี เรสซิเดนซ์",
+  "page.ppr.deluxe1b.title": "Deluxe 1B | เพนต้าพี เรสซิเดนซ์",
+  "page.ppr.deluxe2.title": "Deluxe 2 | เพนต้าพี เรสซิเดนซ์",
+  "page.ppr.grand2.title": "Grand 2 | เพนต้าพี เรสซิเดนซ์",
+  "page.pph.standard.title": "Standard | เพนต้าพี ห้วยม่วง",
+  "page.pph.vip.title": "VIP | เพนต้าพี ห้วยม่วง",
+  "page.ppa.studio.title": "Studio | เพนต้าพี อพาร์ทเมนท์",
+  "page.ppa.vip.title": "VIP | เพนต้าพี อพาร์ทเมนท์"
 }
