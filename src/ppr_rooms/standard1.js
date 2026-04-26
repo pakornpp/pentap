@@ -1,7 +1,7 @@
 import "../styles.css";
 import { setLanguage } from "../i18n.js";
 import { initNav } from "../nav.js";
-import { renderRoomPage } from "./roomPage.js";
+import { renderRoomPage, PPR_MAP_URL } from "./roomPage.js";
 import { PRICES } from "../prices.js";
 
 import heroImg  from "../assets/ppr/standard_1/standard1-1.webp";
@@ -44,4 +44,5 @@ renderRoomPage({
 		{ src: img9, alt: "Standard 1 - view 9", wide: true },
 	],
 	floorPlan: { src: imgPlan, alt: "Standard 1 - floor plan" },
+	mapUrl:    PPR_MAP_URL,
 });
