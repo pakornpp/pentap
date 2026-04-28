@@ -41,5 +41,5 @@ renderRoomPage({
 		{ src: img8, alt: "PPH Standard - view 8" },
 		{ src: img9, alt: "PPH Standard - view 9", wide: true },
 	],
-        mapUrl: PPH_MAP_URL,
+	mapUrl: PPH_MAP_URL,
 });

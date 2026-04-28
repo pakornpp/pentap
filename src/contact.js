@@ -7,8 +7,8 @@ window.setLanguage = setLanguage;
 initNav("index.html");
 
 // ── Contact form ──────────────────────────────────────────────────────────────
-// Sign up at formspree.io, create a form targeting pentapresidence@gmail.com,
-// then replace YOUR_FORM_ID below with the ID Formspree gives you.
+// Formspree endpoint for this contact form.
+// Update FORMSPREE_ENDPOINT below if the Formspree form ID or account changes.
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xqewvnnl";
 
 const form   = document.getElementById("contact-form");

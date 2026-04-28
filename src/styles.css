@@ -1154,6 +1154,11 @@ main {
 .contact-form-error {
   font-size: 0.8rem;
   font-weight: 500;
+  color: #c0392b;
+}
+
+.contact-form-error[hidden] {
+  display: none;
 }
 
 .contact-form-input {
@@ -1208,16 +1213,6 @@ main {
   margin: 0 0 2rem;
   color: rgba(1, 66, 53, 0.7);
   line-height: 1.6;
-}
-
-.contact-form-error {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: #c0392b;
-}
-
-.contact-form-error[hidden] {
-  display: none;
 }
 
 .contact-form-input--invalid {

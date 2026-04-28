@@ -48,5 +48,5 @@ renderRoomPage({
 		{ src: img11, alt: "PPH VIP - view 11" },
 		{ src: img12, alt: "PPH VIP - view 12" },
 	],
-        mapUrl: PPH_MAP_URL,
+	mapUrl: PPH_MAP_URL,
 });

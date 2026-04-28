@@ -123,6 +123,7 @@ export function renderRoomPage(config) {
 						loading="lazy"
 						referrerpolicy="no-referrer-when-downgrade"
 						title="Location map"
+						data-i18n-title="room.map.title"
 					></iframe>
 				</div>
 			</section>` : ''}

@@ -27,6 +27,9 @@ function applyTranslations() {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     el.innerHTML = t(el.dataset.i18n);
   });
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    el.title = t(el.dataset.i18nTitle);
+  });
 }
 
 function updateLangButtons(activeLang) {
