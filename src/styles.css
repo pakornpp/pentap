@@ -170,7 +170,7 @@ nav a {
 }
 
 .lang-switcher button:hover {
-  background: var(--grey);
+  background: var(--grey-100);
   color: var(--green);
 }
 
@@ -1145,6 +1145,17 @@ main {
   color: rgba(1, 66, 53, 0.85);
 }
 
+.contact-form-label-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.contact-form-error {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
 .contact-form-input {
   padding: 0.6rem 0.85rem;
   border: 1px solid rgba(1, 66, 53, 0.2);
@@ -1197,6 +1208,20 @@ main {
   margin: 0 0 2rem;
   color: rgba(1, 66, 53, 0.7);
   line-height: 1.6;
+}
+
+.contact-form-error {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #c0392b;
+}
+
+.contact-form-error[hidden] {
+  display: none;
+}
+
+.contact-form-input--invalid {
+  border-color: #c0392b;
 }
 
 .contact-form-status {

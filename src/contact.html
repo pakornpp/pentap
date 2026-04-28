@@ -110,11 +110,17 @@
                 <p class="contact-form-subheading" data-i18n="contact.form.subheading"></p>
                 <form id="contact-form" class="contact-form" novalidate>
                     <div class="contact-form-group">
-                        <label class="contact-form-label" for="contact-name" data-i18n="contact.form.name"></label>
+                        <div class="contact-form-label-row">
+                            <label class="contact-form-label" for="contact-name" data-i18n="contact.form.name"></label>
+                            <span class="contact-form-error" id="contact-name-error" hidden></span>
+                        </div>
                         <input class="contact-form-input" type="text" id="contact-name" name="name" required autocomplete="name">
                     </div>
                     <div class="contact-form-group">
-                        <label class="contact-form-label" for="contact-email" data-i18n="contact.form.email"></label>
+                        <div class="contact-form-label-row">
+                            <label class="contact-form-label" for="contact-email" data-i18n="contact.form.email"></label>
+                            <span class="contact-form-error" id="contact-email-error" hidden></span>
+                        </div>
                         <input class="contact-form-input" type="email" id="contact-email" name="email" required autocomplete="email">
                     </div>
                     <div class="contact-form-group">
@@ -126,7 +132,10 @@
                         <input class="contact-form-input" type="date" id="contact-movein" name="moveIn">
                     </div>
                     <div class="contact-form-group contact-form-group--full">
-                        <label class="contact-form-label" for="contact-business" data-i18n="contact.form.business"></label>
+                        <div class="contact-form-label-row">
+                            <label class="contact-form-label" for="contact-business" data-i18n="contact.form.business"></label>
+                            <span class="contact-form-error" id="contact-business-error" hidden></span>
+                        </div>
                         <select class="contact-form-input contact-form-select" id="contact-business" name="business" required>
                             <option value="" data-i18n="contact.form.business.placeholder" disabled selected></option>
                             <option value="Penta P Residence" data-i18n="group.ppr.title"></option>
@@ -136,7 +145,10 @@
                         </select>
                     </div>
                     <div class="contact-form-group contact-form-group--full">
-                        <label class="contact-form-label" for="contact-message" data-i18n="contact.form.message"></label>
+                        <div class="contact-form-label-row">
+                            <label class="contact-form-label" for="contact-message" data-i18n="contact.form.message"></label>
+                            <span class="contact-form-error" id="contact-message-error" hidden></span>
+                        </div>
                         <textarea class="contact-form-input contact-form-textarea" id="contact-message" name="message" rows="5" required></textarea>
                     </div>
                     <button class="btn btn-primary contact-form-submit" type="submit" data-i18n="contact.form.submit"></button>
