@@ -1,7 +1,7 @@
 import "../styles.css";
 import { setLanguage } from "../i18n.js";
 import { initNav } from "../nav.js";
-import { renderRoomPage, PPR_MAP_URL } from "./roomPage.js";
+import { renderRoomPage, PPR_MAP_URL } from "../roomPage.js";
 import { PRICES } from "../prices.js";
 
 import heroImg  from "../assets/ppr/grand_2/grand2-1.webp";

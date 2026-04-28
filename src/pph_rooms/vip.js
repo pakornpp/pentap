@@ -1,7 +1,7 @@
 import "../styles.css";
 import { setLanguage } from "../i18n.js";
 import { initNav } from "../nav.js";
-import { renderRoomPage, PPH_MAP_URL } from "../ppr_rooms/roomPage.js";
+import { renderRoomPage, PPH_MAP_URL } from "../roomPage.js";
 import { PRICES } from "../prices.js";
 
 import heroImg from "../assets/pph/vip/vip-1.webp";

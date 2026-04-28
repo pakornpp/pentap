@@ -1113,7 +1113,7 @@ main {
 }
 
 .contact-info-item--line .contact-info-label::before {
-  background-image: url("./assets/icons/icon-line.svg"); /*TODO Line icon is uglyy*/
+  background-image: url("./assets/icons/icon-line.svg");
 }
 
 .contact-info-item--phone .contact-info-label::before {
