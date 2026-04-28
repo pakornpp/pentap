@@ -82,6 +82,7 @@ function buildMapSection(mapUrl) {
 					loading="lazy"
 					referrerpolicy="no-referrer-when-downgrade"
 					title="Location map"
+					data-i18n-title="warehouse.map.title"
 				></iframe>
 			</div>
 		</section>`;
