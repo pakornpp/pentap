@@ -1073,7 +1073,7 @@ main {
 
 .contact-biz-name {
   margin: 0 0 1.25rem;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--green-700, #014235);
 }
@@ -1095,7 +1095,7 @@ main {
   align-items: center;
   gap: 0.45rem;
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1129,7 +1129,7 @@ main {
 }
 
 .contact-info-value {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--green-700, #014235);
   text-decoration: none;
   font-weight: 500;
