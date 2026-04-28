@@ -1,4 +1,5 @@
-import iconsUrl from "../assets/icons/icons.svg";
+import iconsUrl from "./assets/icons/icons.svg";
+import { buildPreviewGallery, buildPopupGallery } from "./gallery.js";
 
 export const PPR_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.720868910684!2d104.8334274!3d15.283010599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3116632edac857a7%3A0x22b27ddbd01b19f0!2zUGVudGEgUCBSZXNpZGVuY2Ug4LmA4Lie4LiZ4LiV4LmJ4Liy4Lie4Li1IOC5gOC4o-C4quC4quC4tOC5gOC4lOC5ieC4meC4i-C5jA!5e0!3m2!1sen!2sth!4v1777188767775!5m2!1sen!2sth";
 export const PPA_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.926744049572!2d104.82766521216315!3d15.271790285236731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3116881a5ba3b0af%3A0x14b6c7caec44bb72!2zUGVudGEgUCBBcGFydG1lbnQg4LmA4Lie4LiZ4LiV4LmJ4LiyIOC4nuC4tSDguK3guJ7guLLguKPguYzguJfguYDguKHguYnguJnguJfguYw!5e0!3m2!1sen!2sth!4v1777189215838!5m2!1sen!2sth";
@@ -40,6 +41,9 @@ export function renderRoomPage(config) {
 	const main = document.querySelector("main");
 	if (!main) return;
 
+	// Combine hero image (treated as wide) with the rest of the gallery
+	const allImages = [{ ...config.heroImage, wide: true }, ...config.gallery];
+
 	const amenitiesHtml = config.amenities
 		.map(({ icon, count }) => {
 			const labelKey = amenityLabelKey(icon, count);
@@ -55,14 +59,6 @@ export function renderRoomPage(config) {
 		.map((key) => `<div class="room-desc-block" data-i18n="${key}"></div>`)
 		.join("\n");
 
-	const galleryHtml = config.gallery
-		.map(({ src, alt, wide }, i) =>
-			`<div class="room-gallery-item${wide ? " room-gallery-item--wide" : ""}">
-				<img src="${src}" alt="${alt}" data-lightbox-index="${i}" style="cursor:zoom-in;">
-			</div>`
-		)
-		.join("\n");
-
 	main.innerHTML = `
 		<div class="room-detail-wrap">
 
@@ -73,9 +69,12 @@ export function renderRoomPage(config) {
 				<div class="room-hero-amenities">
 					${amenitiesHtml}
 				</div>
-				<div class="room-hero-img-wrap">
-					<img src="${config.heroImage.src}" alt="${config.heroImage.alt}">
+				<div class="room-gallery-grid" id="room-preview-gallery">
+					${buildPreviewGallery(allImages)}
 				</div>
+				<button class="warehouse-gallery-expand-btn" id="room-expand-btn">
+					<span data-i18n="warehouse.gallery.viewAll.pre"></span> ${allImages.length} <span data-i18n="warehouse.gallery.viewAll.post"></span>
+				</button>
 			</section>
 
 			<!-- Detail card -->
@@ -94,16 +93,8 @@ export function renderRoomPage(config) {
 				<a href="contact.html" class="btn btn-primary room-cta" data-i18n="room.cta"></a>
 			</section>
 
-			<!-- Photo gallery -->
-			<section class="room-gallery">
-				<h2 class="room-gallery-heading" data-i18n="room.gallery"></h2>
-				<div class="room-gallery-grid">
-					${galleryHtml}
-				</div>
-			</section>
-
 			${config.floorPlan ? `
-		<!-- Floor plan -->
+			<!-- Floor plan -->
 			<section class="room-floorplan">
 				<h2 class="room-gallery-heading" data-i18n="room.floorplan"></h2>
 				${(Array.isArray(config.floorPlan) ? config.floorPlan : [config.floorPlan])
@@ -131,10 +122,55 @@ export function renderRoomPage(config) {
 		</div>
 	`;
 
-	// ── Lightbox ──────────────────────────────────────────────────────────────
-	const images = config.gallery.map(({ src, alt }) => ({ src, alt }));
+	// ── Gallery popup ──────────────────────────────────────────────────────────
+	const galleryPopup = document.createElement("div");
+	galleryPopup.id = "gallery-popup";
+	galleryPopup.setAttribute("aria-modal", "true");
+	galleryPopup.setAttribute("role", "dialog");
+	galleryPopup.setAttribute("aria-label", "All photos");
+	galleryPopup.innerHTML = `
+		<div id="gallery-popup-backdrop"></div>
+		<div id="gallery-popup-panel">
+			<div id="gallery-popup-header">
+				<h3 id="gallery-popup-title">All Photos (${allImages.length})</h3>
+				<button id="gallery-popup-close" aria-label="Close">&times;</button>
+			</div>
+			<div class="room-gallery-grid" id="gallery-popup-grid">
+				${buildPopupGallery(allImages)}
+			</div>
+		</div>
+	`;
+	document.body.appendChild(galleryPopup);
 
-	// Inject lightbox overlay once
+	function openGalleryPopup() {
+		galleryPopup.style.display = "flex";
+		document.body.style.overflow = "hidden";
+	}
+
+	function closeGalleryPopup() {
+		galleryPopup.style.display = "none";
+		document.body.style.overflow = "";
+	}
+
+	document.querySelector("#room-expand-btn").addEventListener("click", openGalleryPopup);
+	document.querySelector("#gallery-popup-close").addEventListener("click", closeGalleryPopup);
+	document.querySelector("#gallery-popup-backdrop").addEventListener("click", closeGalleryPopup);
+
+	document.querySelector("#room-preview-gallery").addEventListener("click", (e) => {
+		if (e.target.closest(".warehouse-gallery-more-overlay")) {
+			openGalleryPopup();
+			return;
+		}
+		const item = e.target.closest("[data-lightbox-index]");
+		if (item) openLightbox(Number(item.dataset.lightboxIndex));
+	});
+
+	document.querySelector("#gallery-popup-grid").addEventListener("click", (e) => {
+		const item = e.target.closest("[data-popup-index]");
+		if (item) openLightbox(Number(item.dataset.popupIndex));
+	});
+
+	// ── Lightbox ──────────────────────────────────────────────────────────────
 	const lightbox = document.createElement("div");
 	lightbox.id = "lightbox";
 	lightbox.setAttribute("aria-modal", "true");
@@ -147,7 +183,6 @@ export function renderRoomPage(config) {
 		<button id="lightbox-next" aria-label="Next">&#8250;</button>
 	`;
 
-	// Inline styles so no extra CSS file is required
 	Object.assign(lightbox.style, {
 		display: "none",
 		position: "fixed",
@@ -157,13 +192,12 @@ export function renderRoomPage(config) {
 		justifyContent: "center",
 	});
 
-	const backdropStyle = `
-		position:fixed;inset:0;background:rgba(0,0,0,.85);`;
+	const backdropStyle = "position:fixed;inset:0;background:rgba(0,0,0,.85);";
 	const btnBase = `
 		position:fixed;background:rgba(255,255,255,.15);border:none;color:#fff;
 		font-size:2.5rem;line-height:1;cursor:pointer;border-radius:50%;
 		width:3rem;height:3rem;display:flex;align-items:center;justify-content:center;
-		transition:background .15s;`;
+		transition:background .15s;z-index:2;`;
 
 	document.body.appendChild(lightbox);
 
@@ -193,45 +227,48 @@ export function renderRoomPage(config) {
 
 	function openLightbox(index) {
 		currentIndex = index;
-		lbImg.src = images[currentIndex].src;
-		lbImg.alt = images[currentIndex].alt;
-		btnPrev.style.display = images.length > 1 ? "flex" : "none";
-		btnNext.style.display = images.length > 1 ? "flex" : "none";
+		lbImg.src = allImages[currentIndex].src;
+		lbImg.alt = allImages[currentIndex].alt;
+		btnPrev.style.display = allImages.length > 1 ? "flex" : "none";
+		btnNext.style.display = allImages.length > 1 ? "flex" : "none";
 		lightbox.style.display = "flex";
 		document.body.style.overflow = "hidden";
 	}
 
 	function closeLightbox() {
 		lightbox.style.display = "none";
-		document.body.style.overflow = "";
+		if (galleryPopup.style.display !== "flex") {
+			document.body.style.overflow = "";
+		}
 	}
 
 	function showPrev() {
-		currentIndex = (currentIndex - 1 + images.length) % images.length;
-		lbImg.src = images[currentIndex].src;
-		lbImg.alt = images[currentIndex].alt;
+		currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+		lbImg.src = allImages[currentIndex].src;
+		lbImg.alt = allImages[currentIndex].alt;
 	}
 
 	function showNext() {
-		currentIndex = (currentIndex + 1) % images.length;
-		lbImg.src = images[currentIndex].src;
-		lbImg.alt = images[currentIndex].alt;
+		currentIndex = (currentIndex + 1) % allImages.length;
+		lbImg.src = allImages[currentIndex].src;
+		lbImg.alt = allImages[currentIndex].alt;
 	}
-
-	// Attach click handlers to gallery images
-	main.querySelectorAll("[data-lightbox-index]").forEach((img) => {
-		img.addEventListener("click", () => openLightbox(Number(img.dataset.lightboxIndex)));
-	});
 
 	btnClose.addEventListener("click", closeLightbox);
 	backdrop.addEventListener("click", closeLightbox);
-	btnPrev.addEventListener("click", (e) => { e.stopPropagation(); showPrev(); });
-	btnNext.addEventListener("click", (e) => { e.stopPropagation(); showNext(); });
+	btnPrev.addEventListener("click", showPrev);
+	btnNext.addEventListener("click", showNext);
 
 	document.addEventListener("keydown", (e) => {
-		if (lightbox.style.display !== "flex") return;
-		if (e.key === "Escape")     closeLightbox();
-		if (e.key === "ArrowLeft")  showPrev();
-		if (e.key === "ArrowRight") showNext();
+		if (lightbox.style.display === "flex") {
+			if (e.key === "Escape")     closeLightbox();
+			if (e.key === "ArrowLeft")  showPrev();
+			if (e.key === "ArrowRight") showNext();
+			return;
+		}
+		if (galleryPopup.style.display === "flex" && e.key === "Escape") {
+			closeGalleryPopup();
+		}
 	});
 }
+
