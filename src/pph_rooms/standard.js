@@ -1,7 +1,7 @@
 import "../styles.css";
 import { setLanguage } from "../i18n.js";
 import { initNav } from "../nav.js";
-import { renderRoomPage } from "../ppr_rooms/roomPage.js";
+import { renderRoomPage, PPH_MAP_URL } from "../ppr_rooms/roomPage.js";
 import { PRICES } from "../prices.js";
 
 import heroImg from "../assets/pph/standard/standard-1.webp";
@@ -41,4 +41,5 @@ renderRoomPage({
 		{ src: img8, alt: "PPH Standard - view 8" },
 		{ src: img9, alt: "PPH Standard - view 9", wide: true },
 	],
+	mapUrl: PPH_MAP_URL,
 });

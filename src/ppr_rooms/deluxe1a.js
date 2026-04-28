@@ -1,7 +1,7 @@
 import "../styles.css";
 import { setLanguage } from "../i18n.js";
 import { initNav } from "../nav.js";
-import { renderRoomPage } from "./roomPage.js";
+import { renderRoomPage, PPR_MAP_URL } from "./roomPage.js";
 import { PRICES } from "../prices.js";
 
 import heroImg  from "../assets/ppr/deluxe_1a/deluxe1a-1.webp";
@@ -54,4 +54,5 @@ renderRoomPage({
 		{ src: img14, alt: "Deluxe 1A - view 14", wide: true },
 	],
 	floorPlan: { src: imgPlan, alt: "Deluxe 1A - floor plan" },
+	mapUrl: PPR_MAP_URL,
 });

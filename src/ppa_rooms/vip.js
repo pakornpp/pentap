@@ -1,7 +1,7 @@
 import "../styles.css";
 import { setLanguage } from "../i18n.js";
 import { initNav } from "../nav.js";
-import { renderRoomPage } from "../ppr_rooms/roomPage.js";
+import { renderRoomPage, PPA_MAP_URL } from "../ppr_rooms/roomPage.js";
 import { PRICES } from "../prices.js";
 
 import heroImg from "../assets/ppa/vip/vip-1.webp";
@@ -49,4 +49,5 @@ renderRoomPage({
 		{ src: img12, alt: "PPA VIP - view 12" },
 		{ src: img13, alt: "PPA VIP - view 13" },
 	],
+	mapUrl: PPA_MAP_URL,
 });

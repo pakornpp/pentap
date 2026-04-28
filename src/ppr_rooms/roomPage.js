@@ -1,5 +1,9 @@
 import iconsUrl from "../assets/icons/icons.svg";
 
+export const PPR_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.720868910684!2d104.8334274!3d15.283010599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3116632edac857a7%3A0x22b27ddbd01b19f0!2zUGVudGEgUCBSZXNpZGVuY2Ug4LmA4Lie4LiZ4LiV4LmJ4Liy4Lie4Li1IOC5gOC4o-C4quC4quC4tOC5gOC4lOC5ieC4meC4i-C5jA!5e0!3m2!1sen!2sth!4v1777188767775!5m2!1sen!2sth";
+export const PPA_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.926744049572!2d104.82766521216315!3d15.271790285236731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3116881a5ba3b0af%3A0x14b6c7caec44bb72!2zUGVudGEgUCBBcGFydG1lbnQg4LmA4Lie4LiZ4LiV4LmJ4LiyIOC4nuC4tSDguK3guJ7guLLguKPguYzguJfguYDguKHguYnguJnguJfguYw!5e0!3m2!1sen!2sth!4v1777189215838!5m2!1sen!2sth";
+export const PPH_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3849.364784902464!2d104.83830821216284!3d15.247889985257618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311689b556e8712f%3A0x8ed1c32f9dfa3044!2zUGVudGEgUCBIdWFpIE11YW5nIOC5gOC4nuC4meC4leC5ieC4siDguJ7guLUg4Lir4LmJ4Lin4Lii4Lih4LmI4Lin4LiH!5e0!3m2!1sen!2sth!4v1777189319101!5m2!1sen!2sth";
+
 /**
  * Maps an icon name + count to the correct amenity i18n key.
  * @param {string} icon - e.g. "icon-bed"
@@ -105,6 +109,23 @@ export function renderRoomPage(config) {
 				${(Array.isArray(config.floorPlan) ? config.floorPlan : [config.floorPlan])
 					.map(({ src, alt }) => `<div class="room-floorplan-img-wrap"><img src="${src}" alt="${alt}"></div>`)
 					.join("\n")}
+			</section>` : ''}
+
+			${config.mapUrl ? `
+			<!-- Location map -->
+			<section class="room-map">
+				<h2 class="room-gallery-heading" data-i18n="room.location"></h2>
+				<div class="room-map-wrap">
+					<iframe
+						src="${config.mapUrl}"
+						style="border:0;"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+						title="Location map"
+						data-i18n-title="room.map.title"
+					></iframe>
+				</div>
 			</section>` : ''}
 
 		</div>
