@@ -321,6 +321,7 @@ if (main) {
 		btnPrev.style.display = images.length > 1 ? "flex" : "none";
 		btnNext.style.display = images.length > 1 ? "flex" : "none";
 		lightbox.style.display = "flex";
+		document.body.style.overflow = "hidden";
 	}
 
 	function closeLightbox() {

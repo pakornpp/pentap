@@ -42,13 +42,13 @@ function calcPreviewCount(images, maxRows = 2, cols = 3) {
 }
 
 function buildPreviewGallery(images) {
-	const previewCount = Math.min(3, images.length);
+	const previewCount = calcPreviewCount(images);
 	const remaining = images.length - previewCount;
 	return images.slice(0, previewCount)
-		.map(({ src, alt }, i) => {
+		.map(({ src, alt, wide }, i) => {
 			const isHero = i === 0;
 			const isLast = remaining > 0 && i === previewCount - 1;
-			return `<div class="room-gallery-item${isHero ? " room-gallery-item--hero" : ""}${isLast ? " warehouse-gallery-item--more" : ""}">
+			return `<div class="room-gallery-item${wide ? " room-gallery-item--wide" : ""}${isHero ? " room-gallery-item--hero" : ""}${isLast ? " warehouse-gallery-item--more" : ""}">
 				<img src="${src}" alt="${alt}" data-lightbox-index="${i}" style="cursor:zoom-in;">
 				${isLast ? `<div class="warehouse-gallery-more-overlay">+${remaining}</div>` : ""}
 			</div>`;
@@ -277,6 +277,7 @@ export function renderRoomPage(config) {
 		btnPrev.style.display = allImages.length > 1 ? "flex" : "none";
 		btnNext.style.display = allImages.length > 1 ? "flex" : "none";
 		lightbox.style.display = "flex";
+		document.body.style.overflow = "hidden";
 	}
 
 	function closeLightbox() {
