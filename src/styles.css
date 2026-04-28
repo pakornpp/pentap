@@ -1073,12 +1073,41 @@ main {
 }
 
 .contact-info-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   margin: 0;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(1, 66, 53, 0.55);
+}
+
+.contact-info-label::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex-shrink: 0;
+}
+
+.contact-info-item--line .contact-info-label::before {
+  background-image: url("./assets/icons/icon-line.svg"); /*TODO Line icon is uglyy*/
+}
+
+.contact-info-item--phone .contact-info-label::before {
+  background-image: url("./assets/icons/icon-phone.svg");
+}
+
+.contact-info-item--facebook .contact-info-label::before {
+  background-image: url("./assets/icons/icon-facebook.svg");
+}
+
+.contact-info-item--location .contact-info-label::before {
+  background-image: url("./assets/icons/icon-location.svg");
 }
 
 .contact-info-value {
