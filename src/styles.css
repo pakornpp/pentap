@@ -169,8 +169,12 @@ nav a {
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-.lang-switcher button.active,
 .lang-switcher button:hover {
+  background: var(--grey);
+  color: var(--green);
+}
+
+.lang-switcher button.active {
   background: var(--white);
   color: var(--green);
 }
