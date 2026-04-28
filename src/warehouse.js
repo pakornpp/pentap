@@ -1,6 +1,7 @@
 import "./styles.css";
 import { setLanguage } from "./i18n.js";
 import { initNav } from "./nav.js";
+import { buildPreviewGallery, buildPopupGallery } from "./gallery.js";
 
 // Warehouse 1 images
 import w1img01 from "./assets/ppw/warehouse_1/1714725372970.webp";
@@ -63,51 +64,6 @@ const includesKeys = [
 
 function buildIncludesList() {
 	return includesKeys.map((key) => `<li data-i18n="${key}"></li>`).join("");
-}
-
-function calcPreviewCount(images, maxRows = 2, cols = 3) {
-	let rowSlots = 0;
-	let rows = 0;
-	for (let i = 0; i < images.length; i++) {
-		const span = images[i].wide ? 2 : 1;
-		if (rowSlots + span > cols) {
-			rows++;
-			if (rows >= maxRows) return i;
-			rowSlots = span;
-		} else {
-			rowSlots += span;
-		}
-		if (rowSlots === cols) {
-			rows++;
-			rowSlots = 0;
-			if (rows >= maxRows) return i + 1;
-		}
-	}
-	return images.length;
-}
-
-function buildPreviewGallery(images) {
-	const previewCount = calcPreviewCount(images);
-	const remaining = images.length - previewCount;
-	return images.slice(0, previewCount)
-		.map(({ src, alt, wide }, i) => {
-			const isLast = remaining > 0 && i === previewCount - 1;
-			return `
-			<div class="room-gallery-item${wide ? " room-gallery-item--wide" : ""}${isLast ? " warehouse-gallery-item--more" : ""}">
-				<img src="${src}" alt="${alt}" data-lightbox-index="${i}" style="cursor:zoom-in;">
-				${isLast ? `<div class="warehouse-gallery-more-overlay">+${remaining}</div>` : ""}
-			</div>`;
-		})
-		.join("");
-}
-
-function buildPopupGallery(images) {
-	return images
-		.map(({ src, alt, wide }, i) => `
-			<div class="room-gallery-item${wide ? " room-gallery-item--wide" : ""}">
-				<img src="${src}" alt="${alt}" data-popup-index="${i}" style="cursor:zoom-in;">
-			</div>`)
-		.join("");
 }
 
 function buildAreaChips(sizes) {

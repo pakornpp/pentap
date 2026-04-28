@@ -1,4 +1,5 @@
 import iconsUrl from "../assets/icons/icons.svg";
+import { buildPreviewGallery, buildPopupGallery } from "../gallery.js";
 
 export const PPR_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.720868910684!2d104.8334274!3d15.283010599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3116632edac857a7%3A0x22b27ddbd01b19f0!2zUGVudGEgUCBSZXNpZGVuY2Ug4LmA4Lie4LiZ4LiV4LmJ4Liy4Lie4Li1IOC5gOC4o-C4quC4quC4tOC5gOC4lOC5ieC4meC4i-C5jA!5e0!3m2!1sen!2sth!4v1777188767775!5m2!1sen!2sth";
 export const PPA_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.926744049572!2d104.82766521216315!3d15.271790285236731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3116881a5ba3b0af%3A0x14b6c7caec44bb72!2zUGVudGEgUCBBcGFydG1lbnQg4LmA4Lie4LiZ4LiV4LmJ4LiyIOC4nuC4tSDguK3guJ7guLLguKPguYzguJfguYDguKHguYnguJnguJfguYw!5e0!3m2!1sen!2sth!4v1777189215838!5m2!1sen!2sth";
@@ -18,52 +19,6 @@ function amenityLabelKey(icon, count) {
 		"icon-living-room": "amenity.livingRoom",
 	};
 	return map[icon] ?? icon;
-}
-
-function calcPreviewCount(images, maxRows = 2, cols = 3) {
-	let rowSlots = 0;
-	let rows = 0;
-	for (let i = 0; i < images.length; i++) {
-		const span = images[i].wide ? 2 : 1;
-		if (rowSlots + span > cols) {
-			rows++;
-			if (rows >= maxRows) return i;
-			rowSlots = span;
-		} else {
-			rowSlots += span;
-		}
-		if (rowSlots === cols) {
-			rows++;
-			rowSlots = 0;
-			if (rows >= maxRows) return i + 1;
-		}
-	}
-	return images.length;
-}
-
-function buildPreviewGallery(images) {
-	const previewCount = calcPreviewCount(images);
-	const remaining = images.length - previewCount;
-	return images.slice(0, previewCount)
-		.map(({ src, alt, wide }, i) => {
-			const isHero = i === 0;
-			const isLast = remaining > 0 && i === previewCount - 1;
-			return `<div class="room-gallery-item${wide ? " room-gallery-item--wide" : ""}${isHero ? " room-gallery-item--hero" : ""}${isLast ? " warehouse-gallery-item--more" : ""}">
-				<img src="${src}" alt="${alt}" data-lightbox-index="${i}" style="cursor:zoom-in;">
-				${isLast ? `<div class="warehouse-gallery-more-overlay">+${remaining}</div>` : ""}
-			</div>`;
-		})
-		.join("\n");
-}
-
-function buildPopupGallery(images) {
-	return images
-		.map(({ src, alt, wide }, i) =>
-			`<div class="room-gallery-item${wide ? " room-gallery-item--wide" : ""}">
-				<img src="${src}" alt="${alt}" data-popup-index="${i}" style="cursor:zoom-in;">
-			</div>`
-		)
-		.join("\n");
 }
 
 /**
