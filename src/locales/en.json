@@ -119,5 +119,25 @@
   "page.pph.standard.title": "Standard | Penta P Huai Muang",
   "page.pph.vip.title": "VIP | Penta P Huai Muang",
   "page.ppa.studio.title": "Studio | Penta P Apartment",
-  "page.ppa.vip.title": "VIP | Penta P Apartment"
+  "page.ppa.vip.title": "VIP | Penta P Apartment",
+
+  "warehouse.w1.eyebrow": "Warehouse 1",
+  "warehouse.w1.title": "Penta P Warehouse 1",
+  "warehouse.w1.status": "Available for rent now",
+  "warehouse.w2.eyebrow": "Warehouse 2",
+  "warehouse.w2.title": "Penta P Warehouse 2",
+  "warehouse.w2.status": "Under Development",
+  "warehouse.area.label": "Warehouse Area",
+  "warehouse.includes.label": "Includes",
+  "warehouse.includes.office": "Office space (approx. 24 sqm)",
+  "warehouse.includes.toilet": "Toilet (separate for male and female)",
+  "warehouse.includes.indoor": "Indoor lighting",
+  "warehouse.includes.exterior": "Exterior lighting",
+  "warehouse.includes.parking": "Spacious parking area",
+  "warehouse.gallery.heading": "Gallery",
+  "warehouse.gallery.viewAll.pre": "View all",
+  "warehouse.gallery.viewAll.post": "photos",
+  "warehouse.location.heading": "Location",
+  "warehouse.cta": "Enquire about this warehouse",
+  "warehouse.w2.devNote": "This warehouse is currently under development. Contact us to register your interest."
 }

@@ -10,6 +10,7 @@ export default {
   entry: {
     main: "./src/index.js",
     accommodation: "./src/accommodation.js",
+    warehouse: "./src/warehouse.js",
     contact: "./src/contact.js",
     standard1: "./src/ppr_rooms/standard1.js",
     superior1: "./src/ppr_rooms/superior1.js",
@@ -38,6 +39,11 @@ export default {
       template: "./src/accommodation.html",
       filename: "accommodation.html",
       chunks: ["accommodation"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/warehouse.html",
+      filename: "warehouse.html",
+      chunks: ["warehouse"],
     }),
     new HtmlWebpackPlugin({
       template: "./src/contact.html",
