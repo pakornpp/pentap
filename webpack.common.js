@@ -1,6 +1,9 @@
 // webpack.config.js
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default {
   mode: "development",
@@ -22,7 +25,7 @@ export default {
   },
   output: {
     filename: "[name].js",
-    path: path.resolve(import.meta.dirname, "dist"),
+    path: path.resolve(__dirname, "dist"),
     clean: true,
   },
   plugins: [
