@@ -1,6 +1,7 @@
 import "../styles.css";
 import { setLanguage } from "../i18n.js";
 import { initNav } from "../nav.js";
+import { initFooter } from "../footer.js";
 import { renderRoomPage, PPR_MAP_URL } from "../roomPage.js";
 import { PRICES } from "../prices.js";
 
@@ -23,6 +24,7 @@ import imgPlan  from "../assets/ppr/deluxe_1a/deluxe1a-plan.webp";
 window.setLanguage = setLanguage;
 
 initNav("index.html");
+initFooter("index.html");
 
 renderRoomPage({
 	titleKey:    "room.deluxe1a.title",

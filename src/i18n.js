@@ -13,7 +13,7 @@ export async function setLanguage(lang) {
   current = module.default ?? module;
 
   document.documentElement.lang = lang;
-  localStorage.setItem('lang', lang);
+  sessionStorage.setItem('lang', lang);
 
   applyTranslations();
   updateLangButtons(lang);
@@ -38,13 +38,8 @@ function updateLangButtons(activeLang) {
   });
 }
 
-// Detect initial language: saved preference → browser language → 'th'
-const saved = localStorage.getItem('lang');
-const browser = navigator.language?.slice(0, 2);
-const initial = SUPPORTED_LANGS.includes(saved)
-  ? saved
-  : SUPPORTED_LANGS.includes(browser)
-    ? browser
-    : 'th';
+// Detect initial language: session preference → 'th' (Thai is the default for every new session)
+const sessionLang = sessionStorage.getItem('lang');
+const initial = SUPPORTED_LANGS.includes(sessionLang) ? sessionLang : 'th';
 
 setLanguage(initial);

@@ -1,6 +1,7 @@
 import "../styles.css";
 import { setLanguage } from "../i18n.js";
 import { initNav } from "../nav.js";
+import { initFooter } from "../footer.js";
 import { renderRoomPage, PPH_MAP_URL } from "../roomPage.js";
 import { PRICES } from "../prices.js";
 
@@ -20,6 +21,7 @@ import img12   from "../assets/pph/vip/vip-12.webp";
 window.setLanguage = setLanguage;
 
 initNav("index.html");
+initFooter("index.html");
 
 renderRoomPage({
 	titleKey:    "room.pph.vip.title",

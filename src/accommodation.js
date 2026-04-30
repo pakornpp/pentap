@@ -1,6 +1,7 @@
 import "./styles.css";
 import { setLanguage } from "./i18n.js";
 import { initNav } from "./nav.js";
+import { initFooter } from "./footer.js";
 import iconsUrl from "./assets/icons/icons.svg";
 import imgStandard1 from "./assets/ppr/standard_1/standard1-1.webp";
 import imgSuperior1 from "./assets/ppr/superior_1/superior1-1.webp";
@@ -18,6 +19,7 @@ import { PRICES } from "./prices.js";
 window.setLanguage = setLanguage;
 
 initNav("index.html");
+initFooter("index.html");
 
 /**
  * Creates and returns a listing card element.

@@ -1,6 +1,7 @@
 import "./styles.css";
 import { setLanguage } from "./i18n.js";
 import { initNav } from "./nav.js";
+import { initFooter } from "./footer.js";
 import { buildPreviewGallery, buildPopupGallery } from "./gallery.js";
 
 // Warehouse 1 images
@@ -29,6 +30,7 @@ import w2img01 from "./assets/ppw/warehouse_2/1764477135926.webp";
 window.setLanguage = setLanguage;
 
 initNav("index.html");
+initFooter("index.html");
 
 const W1_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.704848951059!2d104.80997881237316!3d15.283883359918567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311689c2a24dfeb9%3A0xe2877bf15b116d02!2zUGVudGEgUCBXYXJlaG91c2Ug4LmA4Lie4LiZ4LiV4LmJ4Liy4Lie4Li1IOC5geC4p-C4o-C5jOC5gOC4ruC5ieC4suC4quC5jA!5e0!3m2!1sen!2sth!4v1777387027378!5m2!1sen!2sth";
 const W2_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.960364983848!2d104.82308801237316!3d15.269957160274231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311689003154fc23%3A0xb958175f5cc710b3!2zUGVudGEgUCBXYXJlaG91c2UgMiDguYDguJ7guJnguJXguYnguLLguJ7guLUg4LmB4Lin4Lij4LmM4LmA4Liu4LmJ4Liy4Liq4LmMIDI!5e0!3m2!1sen!2sth!4v1777387072860!5m2!1sen!2sth";

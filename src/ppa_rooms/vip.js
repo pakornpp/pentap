@@ -1,6 +1,7 @@
 import "../styles.css";
 import { setLanguage } from "../i18n.js";
 import { initNav } from "../nav.js";
+import { initFooter } from "../footer.js";
 import { renderRoomPage, PPA_MAP_URL } from "../roomPage.js";
 import { PRICES } from "../prices.js";
 
@@ -21,6 +22,7 @@ import img13   from "../assets/ppa/vip/vip-13.webp";
 window.setLanguage = setLanguage;
 
 initNav("index.html");
+initFooter("index.html");
 
 renderRoomPage({
 	titleKey:    "room.ppa.vip.title",

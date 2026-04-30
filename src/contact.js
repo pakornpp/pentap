@@ -1,10 +1,12 @@
 import "./styles.css";
 import { setLanguage, t } from "./i18n.js";
 import { initNav } from "./nav.js";
+import { initFooter } from "./footer.js";
 
 window.setLanguage = setLanguage;
 
 initNav("index.html");
+initFooter("index.html");
 
 // ── Contact form ──────────────────────────────────────────────────────────────
 // Formspree endpoint for this contact form.
