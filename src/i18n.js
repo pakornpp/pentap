@@ -116,9 +116,7 @@ export function switchToLanguage(lang) {
 window.switchToLanguage = switchToLanguage;
 
 // ── Initial language detection ─────────────────────────────────────────────
-// Priority: URL path segment > localStorage preference > Thai default
-const urlLang  = isEnPage() ? 'en' : null;
-const stored   = localStorage.getItem('lang');
-const initial  = urlLang ?? (SUPPORTED_LANGS.includes(stored) ? stored : 'th');
+// URL path is authoritative: /en/... → English, anything else → Thai.
+const initial = isEnPage() ? 'en' : 'th';
 
 setLanguage(initial);

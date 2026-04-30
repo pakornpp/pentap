@@ -91,6 +91,12 @@ body {
   letter-spacing: 0.04em;
 }
 
+.logo-name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
 .logo {
   width: 64px;
   height: 64px;
