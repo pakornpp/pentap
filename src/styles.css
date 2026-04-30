@@ -969,6 +969,7 @@ main {
   overflow: hidden;
   background: rgba(1, 66, 53, 0.04);
   max-width: 620px;
+  aspect-ratio: 3/2;
 }
 
 .room-floorplan-img-wrap img {

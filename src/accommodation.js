@@ -34,7 +34,7 @@ function createCard({ src, alt, name, price, priceNote, bedrooms, bathrooms, lev
 	}
 	article.innerHTML = `
 		<div class="listing-card-img-wrap">
-			<img src="${src}" alt="${alt}">
+			<img src="${src}" alt="${alt}" loading="lazy">
 		</div>
 		<div class="listing-card-body">
 			<div class="listing-card-title-row">

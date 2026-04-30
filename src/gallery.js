@@ -13,7 +13,8 @@ export function buildPreviewGallery(images) {
 		.map(({ src, alt }, i) => {
 			const isHero = i === 0;
 			const isLast = remaining > 0 && i === previewCount - 1;
-			return `<div class="room-gallery-item${isHero ? " room-gallery-item--hero" : ""}${isLast ? " warehouse-gallery-item--more" : ""}">				<img src="${src}" alt="${alt}" data-lightbox-index="${i}" style="cursor:zoom-in;">
+			const priority = isHero ? ` fetchpriority="high"` : ``;
+			return `<div class="room-gallery-item${isHero ? " room-gallery-item--hero" : ""}${isLast ? " warehouse-gallery-item--more" : ""}">				<img src="${src}" alt="${alt}" data-lightbox-index="${i}" style="cursor:zoom-in;"${priority}>
 				${isLast ? `<div class="warehouse-gallery-more-overlay">+${remaining}</div>` : ""}
 			</div>`;
 		})
@@ -30,7 +31,7 @@ export function buildPopupGallery(images) {
 	return images
 		.map(({ src, alt, wide }, i) =>
 			`<div class="room-gallery-item${wide ? " room-gallery-item--wide" : ""}">
-				<img src="${src}" alt="${alt}" data-popup-index="${i}" style="cursor:zoom-in;">
+				<img src="${src}" alt="${alt}" data-popup-index="${i}" style="cursor:zoom-in;" loading="lazy">
 			</div>`
 		)
 		.join("\n");

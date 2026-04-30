@@ -142,7 +142,7 @@ if (main) {
 				</div>
 
 				<div class="warehouse-single-img-wrap">
-					<img src="${w2img01}" alt="Penta P Warehouse 2">
+					<img src="${w2img01}" alt="Penta P Warehouse 2" loading="lazy">
 				</div>
 
 				<div class="room-info-card">

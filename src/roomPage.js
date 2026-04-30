@@ -193,7 +193,7 @@ export function renderRoomPage(config) {
 			<section class="room-floorplan">
 				<h2 class="room-gallery-heading" data-i18n="room.floorplan"></h2>
 				${(Array.isArray(config.floorPlan) ? config.floorPlan : [config.floorPlan])
-					.map(({ src, alt }) => `<div class="room-floorplan-img-wrap"><img src="${src}" alt="${alt}"></div>`)
+					.map(({ src, alt }) => `<div class="room-floorplan-img-wrap"><img src="${src}" alt="${alt}" loading="lazy"></div>`)
 					.join("\n")}
 			</section>` : ''}
 
