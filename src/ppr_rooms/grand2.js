@@ -57,4 +57,11 @@ renderRoomPage({
 		{ src: imgPlan2, alt: "Grand 2 - floor plan 2" },
 	],
 	mapUrl: PPR_MAP_URL,
+	schema: {
+		name:        "Grand 2",
+		description: "Premium fully furnished 2-bedroom, 2-bathroom unit spanning 2 levels at Penta P Residence, Ubon Ratchathani. Includes kitchen, smart TV, air-conditioner, in-room washing machine, and free fibre optic WiFi.",
+		pageFile:    "ppr-grand2.html",
+		priceNum:    15000,
+		containedIn: "ppr",
+	},
 });

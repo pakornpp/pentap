@@ -51,4 +51,11 @@ renderRoomPage({
 		{ src: img12, alt: "PPH VIP - view 12" },
 	],
 	mapUrl: PPH_MAP_URL,
+	schema: {
+		name:        "VIP",
+		description: "Premium furnished room with living room at Penta P Huai Muang, Ubon Ratchathani. Includes air-conditioner, TV, fridge, electronic door lock, CCTV, free WiFi, and free parking.",
+		pageFile:    "pph-vip.html",
+		priceNum:    8500,
+		containedIn: "pph",
+	},
 });

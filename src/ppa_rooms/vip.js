@@ -52,4 +52,11 @@ renderRoomPage({
 		{ src: img13, alt: "PPA VIP - view 13" },
 	],
 	mapUrl: PPA_MAP_URL,
+	schema: {
+		name:        "VIP",
+		description: "Spacious furnished VIP room at Penta P Apartment, Kham Yai district, Ubon Ratchathani. Move-in ready with TV, fridge, wardrobe, and balcony.",
+		pageFile:    "ppa-vip.html",
+		priceNum:    8500,
+		containedIn: "ppa",
+	},
 });

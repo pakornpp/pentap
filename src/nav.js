@@ -14,7 +14,7 @@ export function initNav(base = "") {
 	nav.innerHTML = `
 		<a href="${base}" class="logo-container">
 			<img src="${logoUrl}" alt="Penta P Logo" class="logo">
-			<h1 class="logo-name">Penta P Group</h1>
+			<span class="logo-name">Penta P Group</span>
 		</a>
 		<div class="nav-menu" id="nav-menu">
 			<a href="${base}" data-i18n="nav.home"></a>

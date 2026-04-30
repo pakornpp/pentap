@@ -55,4 +55,11 @@ renderRoomPage({
 		{ src: imgPlan2, alt: "Deluxe 1B - floor plan 2" },
 	],
 	mapUrl: PPR_MAP_URL,
+	schema: {
+		name:        "Deluxe 1B",
+		description: "Fully furnished 1-bedroom deluxe unit at Penta P Residence, Ubon Ratchathani. Includes kitchen, smart TV, air-conditioner, in-room washing machine, and free fibre optic WiFi.",
+		pageFile:    "ppr-deluxe1b.html",
+		priceNum:    13000,
+		containedIn: "ppr",
+	},
 });

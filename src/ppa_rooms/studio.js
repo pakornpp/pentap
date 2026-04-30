@@ -38,4 +38,11 @@ renderRoomPage({
 		{ src: img6, alt: "PPA Studio - view 6" },
 	],
 	mapUrl: PPA_MAP_URL,
+	schema: {
+		name:        "Studio",
+		description: "Furnished studio room at Penta P Apartment, Kham Yai district, Ubon Ratchathani. Move-in ready with TV, fridge, wardrobe, and balcony.",
+		pageFile:    "ppa-studio.html",
+		priceNum:    4500,
+		containedIn: "ppa",
+	},
 });

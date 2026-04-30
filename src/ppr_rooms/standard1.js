@@ -47,4 +47,11 @@ renderRoomPage({
 	],
 	floorPlan: { src: imgPlan, alt: "Standard 1 - floor plan" },
 	mapUrl:    PPR_MAP_URL,
+	schema: {
+		name:        "Standard 1",
+		description: "Fully furnished 1-bedroom unit at Penta P Residence, Ubon Ratchathani. Includes kitchen, smart TV, air-conditioner, in-room washing machine, and free fibre optic WiFi.",
+		pageFile:    "ppr-standard1.html",
+		priceNum:    9000,
+		containedIn: "ppr",
+	},
 });

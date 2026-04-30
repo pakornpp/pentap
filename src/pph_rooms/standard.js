@@ -44,4 +44,11 @@ renderRoomPage({
 		{ src: img9, alt: "PPH Standard - view 9", wide: true },
 	],
 	mapUrl: PPH_MAP_URL,
+	schema: {
+		name:        "Standard",
+		description: "Fully furnished room at Penta P Huai Muang, Ubon Ratchathani. Includes air-conditioner, TV, fridge, electronic door lock, CCTV, free WiFi, and free parking.",
+		pageFile:    "pph-standard.html",
+		priceNum:    6000,
+		containedIn: "pph",
+	},
 });
