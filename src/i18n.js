@@ -1,10 +1,11 @@
+import { getSiteBase } from './utils.js';
+
 const translations = {
   en: () => import('./locales/en.json'),
   th: () => import('./locales/th.json'),
 };
 
 const SUPPORTED_LANGS = Object.keys(translations);
-const SITE_BASE = 'https://pakornpp.github.io/pentap/';
 let current = {};
 
 export async function setLanguage(lang) {
@@ -61,8 +62,9 @@ function getPageFile() {
  */
 function updateHeadForLanguage() {
   const file   = getPageFile();
-  const thUrl  = SITE_BASE + file;
-  const enUrl  = SITE_BASE + 'en/' + file;
+  const base   = getSiteBase();
+  const thUrl  = base + file;
+  const enUrl  = base + 'en/' + file;
   const pageUrl = isEnPage() ? enUrl : thUrl;
 
   // Canonical
@@ -98,11 +100,11 @@ function updateHeadForLanguage() {
 export function switchToLanguage(lang) {
   const file = getPageFile();
   if (lang === 'en' && !isEnPage()) {
-    location.href = SITE_BASE + 'en/' + file;
+    location.href = getSiteBase() + 'en/' + file;
     return;
   }
   if (lang === 'th' && isEnPage()) {
-    location.href = SITE_BASE + file;
+    location.href = getSiteBase() + file;
     return;
   }
   // Already on the correct URL — just re-apply translations

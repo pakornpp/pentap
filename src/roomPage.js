@@ -1,28 +1,15 @@
 import iconsUrl from "./assets/icons/icons.svg";
 import { buildPreviewGallery, buildPopupGallery } from "./gallery.js";
+import { getSiteBase } from "./utils.js";
 
 export const PPR_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.720868910684!2d104.8334274!3d15.283010599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3116632edac857a7%3A0x22b27ddbd01b19f0!2zUGVudGEgUCBSZXNpZGVuY2Ug4LmA4Lie4LiZ4LiV4LmJ4Liy4Lie4Li1IOC5gOC4o-C4quC4quC4tOC5gOC4lOC5ieC4meC4i-C5jA!5e0!3m2!1sen!2sth!4v1777188767775!5m2!1sen!2sth";
 export const PPA_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.926744049572!2d104.82766521216315!3d15.271790285236731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3116881a5ba3b0af%3A0x14b6c7caec44bb72!2zUGVudGEgUCBBcGFydG1lbnQg4LmA4Lie4LiZ4LiV4LmJ4LiyIOC4nuC4tSDguK3guJ7guLLguKPguYzguJfguYDguKHguYnguJnguJfguYw!5e0!3m2!1sen!2sth!4v1777189215838!5m2!1sen!2sth";
 export const PPH_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3849.364784902464!2d104.83830821216284!3d15.247889985257618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311689b556e8712f%3A0x8ed1c32f9dfa3044!2zUGVudGEgUCBIdWFpIE11YW5nIOC5gOC4nuC4meC4leC5ieC4siDguJ7guLUg4Lir4LmJ4Lin4Lii4Lih4LmI4Lin4LiH!5e0!3m2!1sen!2sth!4v1777189319101!5m2!1sen!2sth";
 
-const BASE_URL = "https://pakornpp.github.io/pentap/";
-
-const PROPERTY_IDS = {
-	ppr: BASE_URL + "#ppr",
-	pph: BASE_URL + "#pph",
-	ppa: BASE_URL + "#ppa",
-};
-
 const PROPERTY_NAMES = {
 	ppr: "Penta P Residence",
 	pph: "Penta P Huai Muang",
 	ppa: "Penta P Apartment",
-};
-
-const PROPERTY_ACCOM_URLS = {
-	ppr: BASE_URL + "accommodation.html#ppr",
-	pph: BASE_URL + "accommodation.html#pph",
-	ppa: BASE_URL + "accommodation.html#ppa",
 };
 
 /**
@@ -39,14 +26,28 @@ const PROPERTY_ACCOM_URLS = {
 function injectRoomSchema(config) {
 	const { schema, amenities, heroImage } = config;
 
+	const base = getSiteBase();
+
+	const PROPERTY_IDS = {
+		ppr: base + "#ppr",
+		pph: base + "#pph",
+		ppa: base + "#ppa",
+	};
+
+	const PROPERTY_ACCOM_URLS = {
+		ppr: base + "accommodation.html#ppr",
+		pph: base + "accommodation.html#pph",
+		ppa: base + "accommodation.html#ppa",
+	};
+
 	const beds  = amenities.find(a => a.icon === "icon-bed")?.count  ?? null;
 	const baths = amenities.find(a => a.icon === "icon-bath")?.count ?? null;
 
 	const imageUrl = heroImage.src.startsWith("./")
-		? BASE_URL + heroImage.src.slice(2)
+		? base + heroImage.src.slice(2)
 		: heroImage.src;
 
-	const pageUrl = BASE_URL + schema.pageFile;
+	const pageUrl = base + schema.pageFile;
 
 	const accomNode = {
 		"@type":       "Accommodation",
@@ -74,8 +75,8 @@ function injectRoomSchema(config) {
 	}
 
 	const breadcrumbs = [
-		{ "@type": "ListItem", "position": 1, "name": "Home",          "item": BASE_URL + "index.html" },
-		{ "@type": "ListItem", "position": 2, "name": "Accommodation", "item": BASE_URL + "accommodation.html" },
+		{ "@type": "ListItem", "position": 1, "name": "Home",          "item": base + "index.html" },
+		{ "@type": "ListItem", "position": 2, "name": "Accommodation", "item": base + "accommodation.html" },
 	];
 	if (schema.containedIn) {
 		breadcrumbs.push({ "@type": "ListItem", "position": 3, "name": PROPERTY_NAMES[schema.containedIn], "item": PROPERTY_ACCOM_URLS[schema.containedIn] });
