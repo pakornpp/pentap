@@ -2,6 +2,7 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -184,6 +185,13 @@ export default {
       template: "./src/ppa_rooms/vip.html",
       filename: "en/ppa-vip.html",
       chunks: ["ppaVip"],
+    }),
+
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "./src/sitemap.xml", to: "sitemap.xml" },
+        { from: "./src/robots.txt",  to: "robots.txt"  },
+      ],
     }),
   ],
   module: {

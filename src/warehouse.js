@@ -36,24 +36,24 @@ const W1_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.7
 const W2_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.960364983848!2d104.82308801237316!3d15.269957160274231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311689003154fc23%3A0xb958175f5cc710b3!2zUGVudGEgUCBXYXJlaG91c2UgMiDguYDguJ7guJnguJXguYnguLLguJ7guLUg4LmB4Lin4Lij4LmM4LmA4Liu4LmJ4Liy4Liq4LmMIDI!5e0!3m2!1sen!2sth!4v1777387072860!5m2!1sen!2sth";
 
 const w1Images = [
-	{ src: w1img01, alt: "Penta P Warehouse 1 - view 1",  wide: true },
-	{ src: w1img02, alt: "Penta P Warehouse 1 - view 2" },
-	{ src: w1img03, alt: "Penta P Warehouse 1 - view 3" },
-	{ src: w1img04, alt: "Penta P Warehouse 1 - view 4" },
-	{ src: w1img05, alt: "Penta P Warehouse 1 - view 5" },
-	{ src: w1img06, alt: "Penta P Warehouse 1 - view 6", wide: true },
-	{ src: w1img07, alt: "Penta P Warehouse 1 - view 7" },
-	{ src: w1img08, alt: "Penta P Warehouse 1 - view 8" },
-	{ src: w1img09, alt: "Penta P Warehouse 1 - view 9" },
-	{ src: w1img10, alt: "Penta P Warehouse 1 - view 10" },
-	{ src: w1img11, alt: "Penta P Warehouse 1 - view 11" },
-	{ src: w1img12, alt: "Penta P Warehouse 1 - view 12", wide: true },
-	{ src: w1img13, alt: "Penta P Warehouse 1 - view 13" },
-	{ src: w1img14, alt: "Penta P Warehouse 1 - view 14" },
-	{ src: w1img15, alt: "Penta P Warehouse 1 - view 15" },
-	{ src: w1img16, alt: "Penta P Warehouse 1 - view 16" },
-	{ src: w1img17, alt: "Penta P Warehouse 1 - view 17" },
-	{ src: w1img18, alt: "Penta P Warehouse 1 - view 18", wide: true },
+	{ src: w1img01, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani",  wide: true },
+	{ src: w1img02, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
+	{ src: w1img03, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
+	{ src: w1img04, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
+	{ src: w1img05, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
+	{ src: w1img06, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani", wide: true },
+	{ src: w1img07, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
+	{ src: w1img08, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
+	{ src: w1img09, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
+	{ src: w1img10, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
+	{ src: w1img11, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
+	{ src: w1img12, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani", wide: true },
+	{ src: w1img13, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
+	{ src: w1img14, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
+	{ src: w1img15, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
+	{ src: w1img16, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
+	{ src: w1img17, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
+	{ src: w1img18, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani", wide: true },
 ];
 
 const includesKeys = [
@@ -142,7 +142,7 @@ if (main) {
 				</div>
 
 				<div class="warehouse-single-img-wrap">
-					<img src="${w2img01}" alt="Penta P Warehouse 2" loading="lazy">
+					<img src="${w2img01}" alt="Penta P Warehouse 2 exterior, Ubon Ratchathani" loading="lazy">
 				</div>
 
 				<div class="room-info-card">

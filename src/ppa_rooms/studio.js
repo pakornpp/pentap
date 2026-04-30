@@ -26,16 +26,16 @@ renderRoomPage({
 	],
 	price:     PRICES.ppa.studio.price,
 	priceNote: PRICES.ppa.studio.note,
-	heroImage: { src: heroImg, alt: "PPA Studio - room view" },
+	heroImage: { src: heroImg, alt: "Studio room interior, Penta P Apartment, Ubon Ratchathani" },
 	descriptionKeys: [
 		"room.ppa.desc.1",
 	],
 	gallery: [
-		{ src: img2, alt: "PPA Studio - view 2", wide: true },
-		{ src: img3, alt: "PPA Studio - view 3" },
-		{ src: img4, alt: "PPA Studio - view 4" },
-		{ src: img5, alt: "PPA Studio - view 5", wide: true },
-		{ src: img6, alt: "PPA Studio - view 6" },
+		{ src: img2, alt: "Studio room interior, Penta P Apartment, Ubon Ratchathani", wide: true },
+		{ src: img3, alt: "Studio room interior, Penta P Apartment, Ubon Ratchathani" },
+		{ src: img4, alt: "Studio room interior, Penta P Apartment, Ubon Ratchathani" },
+		{ src: img5, alt: "Studio room interior, Penta P Apartment, Ubon Ratchathani", wide: true },
+		{ src: img6, alt: "Studio room interior, Penta P Apartment, Ubon Ratchathani" },
 	],
 	mapUrl: PPA_MAP_URL,
 	schema: {

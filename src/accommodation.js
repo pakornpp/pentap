@@ -71,23 +71,23 @@ function createCard({ src, alt, name, price, priceNote, bedrooms, bathrooms, lev
 
 
 const pprCards = [
-	{ src: imgStandard1, alt: "PPR Standard 1",  name: "Standard 1", price: PRICES.ppr.standard1.price, bedrooms: 1, bathrooms: 1, levels: 1, href: "ppr-standard1.html" },
-	{ src: imgSuperior1, alt: "PPR Superior 1",  name: "Superior 1", price: PRICES.ppr.superior1.price, bedrooms: 1, bathrooms: 1, levels: 1, href: "ppr-superior1.html" },
-	{ src: imgDeluxe1a,  alt: "PPR Deluxe 1A",   name: "Deluxe 1A",  price: PRICES.ppr.deluxe1a.price,  bedrooms: 1, bathrooms: 1, levels: 1, href: "ppr-deluxe1a.html" },
-	{ src: imgDeluxe1b,  alt: "PPR Deluxe 1B",   name: "Deluxe 1B",  price: PRICES.ppr.deluxe1b.price,  bedrooms: 1, bathrooms: 2, levels: 2, href: "ppr-deluxe1b.html" },
-	{ src: imgSuperior2, alt: "PPR Superior 2",  name: "Superior 2", price: PRICES.ppr.superior2.price, bedrooms: 2, bathrooms: 2, levels: 2, href: "ppr-superior2.html" },
-	{ src: imgDeluxe2,   alt: "PPR Deluxe 2",    name: "Deluxe 2",   price: PRICES.ppr.deluxe2.price,   bedrooms: 2, bathrooms: 2, levels: 2, href: "ppr-deluxe2.html" },
-	{ src: imgGrand2,    alt: "PPR Grand 2",     name: "Grand 2",    price: PRICES.ppr.grand2.price,    bedrooms: 2, bathrooms: 2, levels: 2, href: "ppr-grand2.html" },
+	{ src: imgStandard1, alt: "Standard 1 room for rent at Penta P Residence, Ubon Ratchathani",  name: "Standard 1", price: PRICES.ppr.standard1.price, bedrooms: 1, bathrooms: 1, levels: 1, href: "ppr-standard1.html" },
+	{ src: imgSuperior1, alt: "Superior 1 room for rent at Penta P Residence, Ubon Ratchathani",  name: "Superior 1", price: PRICES.ppr.superior1.price, bedrooms: 1, bathrooms: 1, levels: 1, href: "ppr-superior1.html" },
+	{ src: imgDeluxe1a,  alt: "Deluxe 1A room for rent at Penta P Residence, Ubon Ratchathani",   name: "Deluxe 1A",  price: PRICES.ppr.deluxe1a.price,  bedrooms: 1, bathrooms: 1, levels: 1, href: "ppr-deluxe1a.html" },
+	{ src: imgDeluxe1b,  alt: "Deluxe 1B room for rent at Penta P Residence, Ubon Ratchathani",   name: "Deluxe 1B",  price: PRICES.ppr.deluxe1b.price,  bedrooms: 1, bathrooms: 2, levels: 2, href: "ppr-deluxe1b.html" },
+	{ src: imgSuperior2, alt: "Superior 2 room for rent at Penta P Residence, Ubon Ratchathani",  name: "Superior 2", price: PRICES.ppr.superior2.price, bedrooms: 2, bathrooms: 2, levels: 2, href: "ppr-superior2.html" },
+	{ src: imgDeluxe2,   alt: "Deluxe 2 room for rent at Penta P Residence, Ubon Ratchathani",    name: "Deluxe 2",   price: PRICES.ppr.deluxe2.price,   bedrooms: 2, bathrooms: 2, levels: 2, href: "ppr-deluxe2.html" },
+	{ src: imgGrand2,    alt: "Grand 2 room for rent at Penta P Residence, Ubon Ratchathani",     name: "Grand 2",    price: PRICES.ppr.grand2.price,    bedrooms: 2, bathrooms: 2, levels: 2, href: "ppr-grand2.html" },
 ];
 
 const pphCards = [
-	{ src: imgPphStandard, alt: "PPH Standard", name: "Standard", price: PRICES.pph.standard.price, priceNote: PRICES.pph.standard.note, bedrooms: 1, bathrooms: 1, href: "pph-standard.html" },
-	{ src: imgPphVip,     alt: "PPH VIP",      name: "VIP",      price: PRICES.pph.vip.price,      priceNote: PRICES.pph.vip.note,      bedrooms: 1, bathrooms: 1, livingRoom: true,  href: "pph-vip.html" },
+	{ src: imgPphStandard, alt: "Standard room for rent at Penta P Huai Muang, Ubon Ratchathani", name: "Standard", price: PRICES.pph.standard.price, priceNote: PRICES.pph.standard.note, bedrooms: 1, bathrooms: 1, href: "pph-standard.html" },
+	{ src: imgPphVip,     alt: "VIP room for rent at Penta P Huai Muang, Ubon Ratchathani",      name: "VIP",      price: PRICES.pph.vip.price,      priceNote: PRICES.pph.vip.note,      bedrooms: 1, bathrooms: 1, livingRoom: true,  href: "pph-vip.html" },
 ];
 
 const ppaCards = [
-	{ src: imgPpaStudio, alt: "PPA Studio", name: "Studio", price: PRICES.ppa.studio.price, priceNote: PRICES.ppa.studio.note, bedrooms: 1, bathrooms: 1, href: "ppa-studio.html" },
-	{ src: imgPpaVip,    alt: "PPA VIP",    name: "VIP",    price: PRICES.ppa.vip.price,    priceNote: PRICES.ppa.vip.note,    bedrooms: 1, bathrooms: 1, livingRoom: true, href: "ppa-vip.html" },
+	{ src: imgPpaStudio, alt: "Studio room for rent at Penta P Apartment, Ubon Ratchathani", name: "Studio", price: PRICES.ppa.studio.price, priceNote: PRICES.ppa.studio.note, bedrooms: 1, bathrooms: 1, href: "ppa-studio.html" },
+	{ src: imgPpaVip,    alt: "VIP room for rent at Penta P Apartment, Ubon Ratchathani",    name: "VIP",    price: PRICES.ppa.vip.price,    priceNote: PRICES.ppa.vip.note,    bedrooms: 1, bathrooms: 1, livingRoom: true, href: "ppa-vip.html" },
 ];
 
 const ppaGrid = document.querySelector("#ppa-grid");
