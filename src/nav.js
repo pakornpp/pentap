@@ -23,8 +23,8 @@ export function initNav(base = "") {
 			<a href="${prefix}contact.html" data-i18n="nav.contact"></a>
 		</div>
 		<div class="lang-switcher">
-			<button data-lang-btn="en" onclick="window.setLanguage('en')">EN</button>
-			<button data-lang-btn="th" onclick="window.setLanguage('th')">ไทย</button>
+			<button data-lang-btn="en" onclick="window.switchToLanguage('en')">EN</button>
+			<button data-lang-btn="th" onclick="window.switchToLanguage('th')">ไทย</button>
 		</div>
 		<button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu"
 			aria-label="Toggle navigation menu">
