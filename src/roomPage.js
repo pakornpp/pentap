@@ -1,9 +1,103 @@
 import iconsUrl from "./assets/icons/icons.svg";
 import { buildPreviewGallery, buildPopupGallery } from "./gallery.js";
+import { getSiteBase } from "./utils.js";
 
 export const PPR_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.720868910684!2d104.8334274!3d15.283010599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3116632edac857a7%3A0x22b27ddbd01b19f0!2zUGVudGEgUCBSZXNpZGVuY2Ug4LmA4Lie4LiZ4LiV4LmJ4Liy4Lie4Li1IOC5gOC4o-C4quC4quC4tOC5gOC4lOC5ieC4meC4i-C5jA!5e0!3m2!1sen!2sth!4v1777188767775!5m2!1sen!2sth";
 export const PPA_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.926744049572!2d104.82766521216315!3d15.271790285236731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3116881a5ba3b0af%3A0x14b6c7caec44bb72!2zUGVudGEgUCBBcGFydG1lbnQg4LmA4Lie4LiZ4LiV4LmJ4LiyIOC4nuC4tSDguK3guJ7guLLguKPguYzguJfguYDguKHguYnguJnguJfguYw!5e0!3m2!1sen!2sth!4v1777189215838!5m2!1sen!2sth";
 export const PPH_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3849.364784902464!2d104.83830821216284!3d15.247889985257618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311689b556e8712f%3A0x8ed1c32f9dfa3044!2zUGVudGEgUCBIdWFpIE11YW5nIOC5gOC4nuC4meC4leC5ieC4siDguJ7guLUg4Lir4LmJ4Lin4Lii4Lih4LmI4Lin4LiH!5e0!3m2!1sen!2sth!4v1777189319101!5m2!1sen!2sth";
+
+const PROPERTY_NAMES = {
+	ppr: "Penta P Residence",
+	pph: "Penta P Huai Muang",
+	ppa: "Penta P Apartment",
+};
+
+/**
+ * Injects an Accommodation + BreadcrumbList JSON-LD script into <head>.
+ * Called automatically by renderRoomPage when config.schema is provided.
+ *
+ * @param {object} config - the full renderRoomPage config (must include config.schema)
+ * @param {string}   config.schema.name         - English room name (e.g. "Standard 1")
+ * @param {string}   config.schema.description  - Short English description
+ * @param {string}   config.schema.pageFile     - Output filename (e.g. "ppr-standard1.html")
+ * @param {number}   config.schema.priceNum     - Numeric monthly price in THB
+ * @param {string}  [config.schema.containedIn] - Property key: "ppr" | "pph" | "ppa"
+ */
+function injectRoomSchema(config) {
+	const { schema, amenities, heroImage } = config;
+
+	const base = getSiteBase();
+
+	const PROPERTY_IDS = {
+		ppr: base + "#ppr",
+		pph: base + "#pph",
+		ppa: base + "#ppa",
+	};
+
+	const PROPERTY_ACCOM_URLS = {
+		ppr: base + "accommodation.html#ppr",
+		pph: base + "accommodation.html#pph",
+		ppa: base + "accommodation.html#ppa",
+	};
+
+	const beds  = amenities.find(a => a.icon === "icon-bed")?.count  ?? null;
+	const baths = amenities.find(a => a.icon === "icon-bath")?.count ?? null;
+
+	const imageUrl = heroImage.src.startsWith("./")
+		? base + heroImage.src.slice(2)
+		: heroImage.src;
+
+	const pageUrl = base + schema.pageFile;
+
+	const accomNode = {
+		"@type":       "Accommodation",
+		"name":        schema.name,
+		"description": schema.description,
+		"url":         pageUrl,
+		"image":       imageUrl,
+		"offers": {
+			"@type":    "Offer",
+			"price":    String(schema.priceNum),
+			"priceCurrency": "THB",
+			"priceSpecification": {
+				"@type":    "UnitPriceSpecification",
+				"price":    String(schema.priceNum),
+				"priceCurrency": "THB",
+				"unitText": "MON",
+			},
+		},
+	};
+
+	if (beds  != null) accomNode["numberOfBedrooms"]       = beds;
+	if (baths != null) accomNode["numberOfBathroomsTotal"] = baths;
+	if (schema.containedIn) {
+		accomNode["containedInPlace"] = { "@id": PROPERTY_IDS[schema.containedIn] };
+	}
+
+	const breadcrumbs = [
+		{ "@type": "ListItem", "position": 1, "name": "Home",          "item": base + "index.html" },
+		{ "@type": "ListItem", "position": 2, "name": "Accommodation", "item": base + "accommodation.html" },
+	];
+	if (schema.containedIn) {
+		breadcrumbs.push({ "@type": "ListItem", "position": 3, "name": PROPERTY_NAMES[schema.containedIn], "item": PROPERTY_ACCOM_URLS[schema.containedIn] });
+		breadcrumbs.push({ "@type": "ListItem", "position": 4, "name": schema.name });
+	} else {
+		breadcrumbs.push({ "@type": "ListItem", "position": 3, "name": schema.name });
+	}
+
+	const ldJson = {
+		"@context": "https://schema.org",
+		"@graph": [
+			accomNode,
+			{ "@type": "BreadcrumbList", "itemListElement": breadcrumbs },
+		],
+	};
+
+	const script = document.createElement("script");
+	script.type = "application/ld+json";
+	script.textContent = JSON.stringify(ldJson);
+	document.head.appendChild(script);
+}
 
 /**
  * Maps an icon name + count to the correct amenity i18n key.
@@ -40,6 +134,8 @@ function amenityLabelKey(icon, count) {
 export function renderRoomPage(config) {
 	const main = document.querySelector("main");
 	if (!main) return;
+
+	if (config.schema) injectRoomSchema(config);
 
 	// Combine hero image (treated as wide) with the rest of the gallery
 	const allImages = [{ ...config.heroImage, wide: true }, ...config.gallery];
@@ -98,7 +194,7 @@ export function renderRoomPage(config) {
 			<section class="room-floorplan">
 				<h2 class="room-gallery-heading" data-i18n="room.floorplan"></h2>
 				${(Array.isArray(config.floorPlan) ? config.floorPlan : [config.floorPlan])
-					.map(({ src, alt }) => `<div class="room-floorplan-img-wrap"><img src="${src}" alt="${alt}"></div>`)
+					.map(({ src, alt }) => `<div class="room-floorplan-img-wrap"><img src="${src}" alt="${alt}" loading="lazy"></div>`)
 					.join("\n")}
 			</section>` : ''}
 

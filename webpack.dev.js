@@ -4,6 +4,9 @@
  export default merge(common, {
    mode: 'development',
    devtool: 'inline-source-map',
+   output: {
+     publicPath: '/',
+   },
    devServer: {
      static: './dist',
    },

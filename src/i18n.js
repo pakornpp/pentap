@@ -1,3 +1,5 @@
+import { getSiteBase } from './utils.js';
+
 const translations = {
   en: () => import('./locales/en.json'),
   th: () => import('./locales/th.json'),
@@ -13,10 +15,11 @@ export async function setLanguage(lang) {
   current = module.default ?? module;
 
   document.documentElement.lang = lang;
-  sessionStorage.setItem('lang', lang);
+  localStorage.setItem('lang', lang);
 
   applyTranslations();
   updateLangButtons(lang);
+  updateHeadForLanguage();
 }
 
 export function t(key) {
@@ -30,6 +33,10 @@ function applyTranslations() {
   document.querySelectorAll('[data-i18n-title]').forEach(el => {
     el.title = t(el.dataset.i18nTitle);
   });
+  // <title> is in <head>, not in body, so querySelectorAll('[data-i18n]') misses it.
+  // Update document.title explicitly.
+  const titleEl = document.querySelector('title[data-i18n]');
+  if (titleEl) document.title = t(titleEl.dataset.i18n);
 }
 
 function updateLangButtons(activeLang) {
@@ -38,8 +45,78 @@ function updateLangButtons(activeLang) {
   });
 }
 
-// Detect initial language: session preference → 'th' (Thai is the default for every new session)
-const sessionLang = sessionStorage.getItem('lang');
-const initial = SUPPORTED_LANGS.includes(sessionLang) ? sessionLang : 'th';
+/** Returns true when the current page is under the /en/ path. */
+function isEnPage() {
+  return location.pathname.split('/').includes('en');
+}
+
+/** Returns the HTML filename of the current page (e.g. "ppr-standard1.html"). */
+function getPageFile() {
+  const last = location.pathname.split('/').filter(Boolean).pop();
+  return (last && last.endsWith('.html')) ? last : 'index.html';
+}
+
+/**
+ * Updates <link rel="canonical">, <meta property="og:url">, and injects
+ * hreflang alternate tags. Called automatically after every setLanguage().
+ */
+function updateHeadForLanguage() {
+  const file   = getPageFile();
+  const base   = getSiteBase();
+  const thUrl  = base + file;
+  const enUrl  = base + 'en/' + file;
+  const pageUrl = isEnPage() ? enUrl : thUrl;
+
+  // Canonical
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) canonical.href = pageUrl;
+
+  // OG URL
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+  if (ogUrl) ogUrl.setAttribute('content', pageUrl);
+
+  // Hreflang — injected once per page load
+  if (!document.querySelector('link[rel="alternate"][hreflang]')) {
+    [
+      { hreflang: 'th',        href: thUrl },
+      { hreflang: 'en',        href: enUrl },
+      { hreflang: 'x-default', href: thUrl },
+    ].forEach(({ hreflang, href }) => {
+      const link = document.createElement('link');
+      link.rel = 'alternate';
+      link.hreflang = hreflang;
+      link.href = href;
+      document.head.appendChild(link);
+    });
+  }
+}
+
+/**
+ * Switches the displayed language.
+ * For Option-B separate URL paths: navigates to the /en/ or root version
+ * of the current page instead of just re-rendering in place.
+ * Exposed on window so the nav buttons can call it via onclick.
+ */
+export function switchToLanguage(lang) {
+  const file = getPageFile();
+  if (lang === 'en' && !isEnPage()) {
+    location.href = getSiteBase() + 'en/' + file;
+    return;
+  }
+  if (lang === 'th' && isEnPage()) {
+    location.href = getSiteBase() + file;
+    return;
+  }
+  // Already on the correct URL — just re-apply translations
+  setLanguage(lang);
+}
+
+// Expose on window for nav onclick handlers (set once here, no need to
+// repeat window.setLanguage = setLanguage in every entry file for nav buttons)
+window.switchToLanguage = switchToLanguage;
+
+// ── Initial language detection ─────────────────────────────────────────────
+// URL path is authoritative: /en/... → English, anything else → Thai.
+const initial = isEnPage() ? 'en' : 'th';
 
 setLanguage(initial);

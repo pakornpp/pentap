@@ -14,7 +14,7 @@ export function initNav(base = "") {
 	nav.innerHTML = `
 		<a href="${base}" class="logo-container">
 			<img src="${logoUrl}" alt="Penta P Logo" class="logo">
-			<h1 class="logo-name">Penta P Group</h1>
+			<span class="logo-name">Penta P Group</span>
 		</a>
 		<div class="nav-menu" id="nav-menu">
 			<a href="${base}" data-i18n="nav.home"></a>
@@ -23,8 +23,8 @@ export function initNav(base = "") {
 			<a href="${prefix}contact.html" data-i18n="nav.contact"></a>
 		</div>
 		<div class="lang-switcher">
-			<button data-lang-btn="en" onclick="window.setLanguage('en')">EN</button>
-			<button data-lang-btn="th" onclick="window.setLanguage('th')">ไทย</button>
+			<button data-lang-btn="en" onclick="window.switchToLanguage('en')">EN</button>
+			<button data-lang-btn="th" onclick="window.switchToLanguage('th')">ไทย</button>
 		</div>
 		<button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu"
 			aria-label="Toggle navigation menu">
