@@ -5,15 +5,17 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const GOOGLE_ANALYTICS_SNIPPET = `    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WG08XHQNM2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+const GOOGLE_ANALYTICS_MEASUREMENT_ID = "G-WG08XHQNM2";
+const GOOGLE_ANALYTICS_SCRIPT_TAG = `<script async src="https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_MEASUREMENT_ID}"></script>`;
+const GOOGLE_ANALYTICS_SNIPPET = `<!-- Google tag (gtag.js) -->
+${GOOGLE_ANALYTICS_SCRIPT_TAG}
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
 
-        gtag('config', 'G-WG08XHQNM2');
-    </script>`;
+gtag('config', '${GOOGLE_ANALYTICS_MEASUREMENT_ID}');
+</script>`;
 
 class InjectGoogleAnalyticsPlugin {
   apply(compiler) {
@@ -21,7 +23,7 @@ class InjectGoogleAnalyticsPlugin {
       HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tap(
         "InjectGoogleAnalyticsPlugin",
         (data) => {
-          if (!data.html.includes("https://www.googletagmanager.com/gtag/js?id=G-WG08XHQNM2")) {
+          if (!data.html.includes(GOOGLE_ANALYTICS_SCRIPT_TAG)) {
             data.html = data.html.replace("<head>", `<head>\n${GOOGLE_ANALYTICS_SNIPPET}`);
           }
           return data;
