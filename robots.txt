@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pakornpp.github.io/pentap/sitemap.xml
+Sitemap: https://www.pentapgroup.com/sitemap.xml
