@@ -5,6 +5,31 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const GOOGLE_ANALYTICS_SNIPPET = `    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WG08XHQNM2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-WG08XHQNM2');
+    </script>`;
+
+class InjectGoogleAnalyticsPlugin {
+  apply(compiler) {
+    compiler.hooks.compilation.tap("InjectGoogleAnalyticsPlugin", (compilation) => {
+      HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tap(
+        "InjectGoogleAnalyticsPlugin",
+        (data) => {
+          if (!data.html.includes("https://www.googletagmanager.com/gtag/js?id=G-WG08XHQNM2")) {
+            data.html = data.html.replace("<head>", `<head>\n${GOOGLE_ANALYTICS_SNIPPET}`);
+          }
+          return data;
+        },
+      );
+    });
+  }
+}
 
 export default {
   mode: "development",
@@ -32,6 +57,7 @@ export default {
     clean: true,
   },
   plugins: [
+    new InjectGoogleAnalyticsPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/template.html",
       filename: "index.html",
