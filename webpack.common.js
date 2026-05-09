@@ -5,6 +5,33 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const GOOGLE_ANALYTICS_MEASUREMENT_ID = "G-WG08XHQNM2";
+const GOOGLE_ANALYTICS_SCRIPT_TAG = `<script async src="https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_MEASUREMENT_ID}"></script>`;
+const GOOGLE_ANALYTICS_SNIPPET = `<!-- Google tag (gtag.js) -->
+${GOOGLE_ANALYTICS_SCRIPT_TAG}
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', '${GOOGLE_ANALYTICS_MEASUREMENT_ID}');
+</script>`;
+
+class InjectGoogleAnalyticsPlugin {
+  apply(compiler) {
+    compiler.hooks.compilation.tap("InjectGoogleAnalyticsPlugin", (compilation) => {
+      HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tap(
+        "InjectGoogleAnalyticsPlugin",
+        (data) => {
+          if (!data.html.includes(GOOGLE_ANALYTICS_SCRIPT_TAG)) {
+            data.html = data.html.replace("<head>", `<head>\n${GOOGLE_ANALYTICS_SNIPPET}`);
+          }
+          return data;
+        },
+      );
+    });
+  }
+}
 
 export default {
   mode: "development",
@@ -32,6 +59,7 @@ export default {
     clean: true,
   },
   plugins: [
+    new InjectGoogleAnalyticsPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/template.html",
       filename: "index.html",
