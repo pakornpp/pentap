@@ -219,6 +219,7 @@ export default {
       patterns: [
         { from: "./src/sitemap.xml", to: "sitemap.xml" },
         { from: "./src/robots.txt",  to: "robots.txt"  },
+        { from: "./src/CNAME",       to: "CNAME"       },
       ],
     }),
   ],
