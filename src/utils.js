@@ -1,7 +1,7 @@
 /**
  * Derives the site root URL from the current page location.
  * Works correctly in both local dev (e.g. http://localhost:8080/) and
- * the production site (e.g. https://www.pentapgroup.com/).
+ * the production site (e.g. https://pentapgroup.com/).
  * Strips the page filename and the optional /en/ path segment.
  *
  * @returns {string} Site root URL with a trailing slash.

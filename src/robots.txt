@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.pentapgroup.com/sitemap.xml
+Sitemap: https://pentapgroup.com/sitemap.xml
