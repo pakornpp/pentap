@@ -5,27 +5,27 @@ import { initFooter } from "./footer.js";
 import { buildPreviewGallery, buildPopupGallery } from "./gallery.js";
 
 // Warehouse 1 images
-import w1img01 from "./assets/ppw/warehouse_1/1714725372970.webp";
+import w1img01 from "./assets/ppw/warehouse_1/20231220_091306.webp";
 import w1img02 from "./assets/ppw/warehouse_1/20230927_130443.webp";
-import w1img03 from "./assets/ppw/warehouse_1/20231023_163917.webp";
-import w1img04 from "./assets/ppw/warehouse_1/20231023_164046.webp";
-import w1img05 from "./assets/ppw/warehouse_1/20231023_164117.webp";
-import w1img06 from "./assets/ppw/warehouse_1/20231023_164133.webp";
-import w1img07 from "./assets/ppw/warehouse_1/20231023_164229.webp";
-import w1img08 from "./assets/ppw/warehouse_1/20231023_214508.webp";
-import w1img09 from "./assets/ppw/warehouse_1/20231220_091306.webp";
-import w1img10 from "./assets/ppw/warehouse_1/20240125_093927.webp";
-import w1img11 from "./assets/ppw/warehouse_1/20240125_094127.webp";
-import w1img12 from "./assets/ppw/warehouse_1/20240125_094211.webp";
-import w1img13 from "./assets/ppw/warehouse_1/20240125_094248.webp";
-import w1img14 from "./assets/ppw/warehouse_1/20240125_094326.webp";
-import w1img15 from "./assets/ppw/warehouse_1/20240215_153930.webp";
-import w1img16 from "./assets/ppw/warehouse_1/20240215_153945.webp";
-import w1img17 from "./assets/ppw/warehouse_1/20240215_154005.webp";
-import w1img18 from "./assets/ppw/warehouse_1/20240215_154117.webp";
+import w1img03 from "./assets/ppw/warehouse_1/20240215_160455.webp";
+import w1img04 from "./assets/ppw/warehouse_1/1713775833447.webp";
+import w1img05 from "./assets/ppw/warehouse_1/1713775835918.webp";
+import w1img06 from "./assets/ppw/warehouse_1/1713775841165.webp";
+import w1img07 from "./assets/ppw/warehouse_1/1713775843735.webp";
+import w1img08 from "./assets/ppw/warehouse_1/20240215_160628.webp";
+import w1img09 from "./assets/ppw/warehouse_1/Screenshot_20250108_165055_OneDrive.webp";
+import w1img10 from "./assets/ppw/warehouse_1/Screenshot_20250108_165101_OneDrive.webp";
+import w1img11 from "./assets/ppw/warehouse_1/Screenshot_20250108_165120_OneDrive.webp";
+import w1img12 from "./assets/ppw/warehouse_1/Screenshot_20250108_165131_OneDrive.webp";
 
-// Warehouse 2 image
-import w2img01 from "./assets/ppw/warehouse_2/1764477135926.webp";
+// Warehouse 2 images
+import w2img01 from "./assets/ppw/warehouse_2/20260910_101905.webp";
+import w2img02 from "./assets/ppw/warehouse_2/20260912_165917.webp";
+import w2img03 from "./assets/ppw/warehouse_2/20260910_101557.webp";
+import w2img04 from "./assets/ppw/warehouse_2/20260910_101602.webp";
+import w2img05 from "./assets/ppw/warehouse_2/20260910_101657.webp";
+import w2img06 from "./assets/ppw/warehouse_2/20260910_101709.webp";
+import w2img07 from "./assets/ppw/warehouse_2/20260910_101756.webp";
 
 window.setLanguage = setLanguage;
 
@@ -36,7 +36,7 @@ const W1_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.7
 const W2_MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.960364983848!2d104.82308801237316!3d15.269957160274231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311689003154fc23%3A0xb958175f5cc710b3!2zUGVudGEgUCBXYXJlaG91c2UgMiDguYDguJ7guJnguJXguYnguLLguJ7guLUg4LmB4Lin4Lij4LmM4LmA4Liu4LmJ4Liy4Liq4LmMIDI!5e0!3m2!1sen!2sth!4v1777387072860!5m2!1sen!2sth";
 
 const w1Images = [
-	{ src: w1img01, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani",  wide: true },
+	{ src: w1img01, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani", wide: true },
 	{ src: w1img02, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
 	{ src: w1img03, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
 	{ src: w1img04, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
@@ -48,12 +48,16 @@ const w1Images = [
 	{ src: w1img10, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
 	{ src: w1img11, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
 	{ src: w1img12, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani", wide: true },
-	{ src: w1img13, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
-	{ src: w1img14, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
-	{ src: w1img15, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
-	{ src: w1img16, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
-	{ src: w1img17, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani" },
-	{ src: w1img18, alt: "Penta P Warehouse 1 interior, Ubon Ratchathani", wide: true },
+];
+
+const w2Images = [
+	{ src: w2img01, alt: "Penta P Warehouse 2, Ubon Ratchathani", wide: true },
+	{ src: w2img02, alt: "Penta P Warehouse 2, Ubon Ratchathani" },
+	{ src: w2img03, alt: "Penta P Warehouse 2, Ubon Ratchathani" },
+	{ src: w2img04, alt: "Penta P Warehouse 2, Ubon Ratchathani" },
+	{ src: w2img05, alt: "Penta P Warehouse 2, Ubon Ratchathani" },
+	{ src: w2img06, alt: "Penta P Warehouse 2, Ubon Ratchathani" },
+	{ src: w2img07, alt: "Penta P Warehouse 2, Ubon Ratchathani", wide: true },
 ];
 
 const includesKeys = [
@@ -141,9 +145,15 @@ if (main) {
 					<span class="warehouse-status-badge warehouse-status-badge--dev" data-i18n="warehouse.w2.status">Under Development</span>
 				</div>
 
-				<div class="warehouse-single-img-wrap">
-					<img src="${w2img01}" alt="Penta P Warehouse 2 exterior, Ubon Ratchathani" loading="lazy">
-				</div>
+				<section class="room-gallery">
+					<h2 class="room-gallery-heading" data-i18n="warehouse.gallery.heading">Gallery</h2>
+					<div class="room-gallery-grid" id="w2-gallery">
+						${buildPreviewGallery(w2Images)}
+					</div>
+					<button class="warehouse-gallery-expand-btn" id="w2-expand-btn">
+						<span data-i18n="warehouse.gallery.viewAll.pre"></span> ${w2Images.length} <span data-i18n="warehouse.gallery.viewAll.post"></span>
+					</button>
+				</section>
 
 				<div class="room-info-card">
 					<p class="warehouse-dev-note" data-i18n="warehouse.w2.devNote">This warehouse is currently under development. Contact us to register your interest.</p>
@@ -178,17 +188,24 @@ if (main) {
 		<div id="gallery-popup-backdrop"></div>
 		<div id="gallery-popup-panel">
 			<div id="gallery-popup-header">
-				<h3 id="gallery-popup-title">All Photos (${w1Images.length})</h3>
+				<h3 id="gallery-popup-title"></h3>
 				<button id="gallery-popup-close" aria-label="Close">&times;</button>
 			</div>
-			<div class="room-gallery-grid" id="gallery-popup-grid">
-				${buildPopupGallery(w1Images)}
-			</div>
+			<div class="room-gallery-grid" id="gallery-popup-grid"></div>
 		</div>
 	`;
 	document.body.appendChild(galleryPopup);
 
-	function openGalleryPopup() {
+	const popupTitle = galleryPopup.querySelector("#gallery-popup-title");
+	const popupGrid  = galleryPopup.querySelector("#gallery-popup-grid");
+
+	// Images shown by the popup and lightbox; switched to the warehouse being viewed
+	let images = w1Images;
+
+	function openGalleryPopup(set) {
+		images = set;
+		popupTitle.textContent = `All Photos (${set.length})`;
+		popupGrid.innerHTML = buildPopupGallery(set);
 		galleryPopup.style.display = "flex";
 		document.body.style.overflow = "hidden";
 	}
@@ -198,17 +215,21 @@ if (main) {
 		document.body.style.overflow = "";
 	}
 
-	document.querySelector("#w1-expand-btn").addEventListener("click", openGalleryPopup);
 	document.querySelector("#gallery-popup-close").addEventListener("click", closeGalleryPopup);
 	document.querySelector("#gallery-popup-backdrop").addEventListener("click", closeGalleryPopup);
 
-	document.querySelector("#w1-gallery").addEventListener("click", (e) => {
-		if (e.target.closest(".warehouse-gallery-more-overlay")) {
-			openGalleryPopup();
-			return;
-		}
-		const item = e.target.closest("[data-lightbox-index]");
-		if (item) openLightbox(Number(item.dataset.lightboxIndex));
+	[["w1", w1Images], ["w2", w2Images]].forEach(([id, set]) => {
+		document.querySelector(`#${id}-expand-btn`).addEventListener("click", () => openGalleryPopup(set));
+		document.querySelector(`#${id}-gallery`).addEventListener("click", (e) => {
+			if (e.target.closest(".warehouse-gallery-more-overlay")) {
+				openGalleryPopup(set);
+				return;
+			}
+			const item = e.target.closest("[data-lightbox-index]");
+			if (!item) return;
+			images = set;
+			openLightbox(Number(item.dataset.lightboxIndex));
+		});
 	});
 
 	document.querySelector("#gallery-popup-grid").addEventListener("click", (e) => {
@@ -217,8 +238,6 @@ if (main) {
 	});
 
 	// ── Lightbox ──────────────────────────────────────────────────────────────
-	const images = w1Images.map(({ src, alt }) => ({ src, alt }));
-
 	const lightbox = document.createElement("div");
 	lightbox.id = "lightbox";
 	lightbox.setAttribute("aria-modal", "true");
