@@ -104,11 +104,9 @@ if (main) {
 			<section id="warehouse-1" class="warehouse-section">
 				<div class="warehouse-section-header">
 					<h1 class="warehouse-section-title" data-i18n="warehouse.w1.title">Penta P Warehouse 1</h1>
-					<span class="warehouse-status-badge warehouse-status-badge--available" data-i18n="warehouse.w1.status">Available for rent now</span>
 				</div>
 
 				<section class="room-gallery">
-					<h2 class="room-gallery-heading" data-i18n="warehouse.gallery.heading">Gallery</h2>
 					<div class="room-gallery-grid" id="w1-gallery">
 						${buildPreviewGallery(w1Images)}
 					</div>
@@ -142,11 +140,9 @@ if (main) {
 			<section id="warehouse-2" class="warehouse-section">
 				<div class="warehouse-section-header">
 					<h1 class="warehouse-section-title" data-i18n="warehouse.w2.title">Penta P Warehouse 2</h1>
-					<span class="warehouse-status-badge warehouse-status-badge--dev" data-i18n="warehouse.w2.status">Under Development</span>
 				</div>
 
 				<section class="room-gallery">
-					<h2 class="room-gallery-heading" data-i18n="warehouse.gallery.heading">Gallery</h2>
 					<div class="room-gallery-grid" id="w2-gallery">
 						${buildPreviewGallery(w2Images)}
 					</div>
@@ -156,7 +152,6 @@ if (main) {
 				</section>
 
 				<div class="room-info-card">
-					<p class="warehouse-dev-note" data-i18n="warehouse.w2.devNote">This warehouse is currently under development. Contact us to register your interest.</p>
 					<div>
 						<p class="warehouse-info-label" data-i18n="warehouse.area.label">Warehouse Area</p>
 						<div class="warehouse-area-chips">

@@ -1287,26 +1287,6 @@ main {
   line-height: 1.05;
 }
 
-.warehouse-status-badge {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  padding: 0.4rem 1rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.warehouse-status-badge--available {
-  background: rgba(18, 169, 159, 0.14);
-  color: var(--turquoise);
-}
-
-.warehouse-status-badge--dev {
-  background: rgba(214, 122, 35, 0.12);
-  color: #d67a23;
-}
-
 .warehouse-info-label {
   margin: 0 0 0.75rem;
   font-size: 0.8rem;
@@ -1336,16 +1316,6 @@ main {
   padding: 0 0 0 1.2rem;
   color: rgba(1, 66, 53, 0.78);
   line-height: 1.9;
-}
-
-.warehouse-dev-note {
-  margin: 0;
-  padding: 1rem 1.25rem;
-  background: rgba(214, 122, 35, 0.08);
-  border-left: 3px solid #d67a23;
-  border-radius: 0 8px 8px 0;
-  color: rgba(1, 66, 53, 0.78);
-  line-height: 1.7;
 }
 
 .warehouse-divider {
